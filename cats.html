@@ -365,6 +365,70 @@
       color: #333;
     }
 
+    /* Dark Two-Column Global Footer */
+    .dark-footer {
+      background-color: #0d1222;
+      color: #ffffff;
+      padding: 60px 80px 40px;
+    }
+
+    .footer-top-grid {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .footer-info-col h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-info-col p {
+      color: #cccccc;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-info-col a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-nav-col h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .footer-nav-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-nav-col a {
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-col a:hover {
+      color: #E91E63;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid #1a2238;
+      padding-top: 25px;
+      text-align: center;
+      color: #888888;
+      font-size: 0.85rem;
+    }
+
     @media (max-width: 768px) {
       .navbar {
         padding: 20px;
@@ -378,14 +442,22 @@
       .behavior-grid {
         grid-template-columns: 1fr 1fr;
       }
+      .footer-top-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+      .dark-footer {
+        padding: 40px 20px 30px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
-      <span class="logo-icon">🐾</span> HAPPY PAWS
+      <span class="logo-icon">🐾</span> Happy Paws Cat Rescue
     </a>
     <nav>
       <ul class="nav-links">
@@ -405,6 +477,7 @@
     </nav>
   </header>
 
+  <!-- Title Header -->
   <section class="cats-header">
     <h1>These are some of our beautiful cats and kittens that are looking for their forever homes</h1>
     <p>If you see a cat you would like to know more about, click on their photo.</p>
@@ -413,6 +486,7 @@
 
   <main class="cats-app-card">
     
+    <!-- Filter Bar -->
     <div class="filter-bar">
       <label for="age-filter">Age</label>
       <select id="age-filter" class="filter-select" onchange="filterCats()">
@@ -424,8 +498,10 @@
       </select>
     </div>
 
+    <!-- Cats Grid -->
     <div class="cats-grid">
 
+      <!-- Magic -->
       <div class="cat-card-item" data-age="Adult" onclick="openCatModal('Magic', 'Female', 'Adult', 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80')">
         <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Magic" class="cat-card-img">
         <div class="cat-card-info">
@@ -434,6 +510,7 @@
         </div>
       </div>
 
+      <!-- Ziggy -->
       <div class="cat-card-item" data-age="Baby" onclick="openCatModal('Ziggy', 'Male', 'Baby', 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80')">
         <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80" alt="Ziggy" class="cat-card-img">
         <div class="cat-card-info">
@@ -442,6 +519,7 @@
         </div>
       </div>
 
+      <!-- Louie -->
       <div class="cat-card-item" data-age="Baby" onclick="openCatModal('Louie', 'Male', 'Baby', 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80')">
         <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Louie" class="cat-card-img">
         <div class="cat-card-info">
@@ -450,6 +528,7 @@
         </div>
       </div>
 
+      <!-- Pumpkin -->
       <div class="cat-card-item" data-age="Adult" onclick="openCatModal('Pumpkin', 'Female', 'Adult', 'https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=600&q=80')">
         <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=600&q=80" alt="Pumpkin" class="cat-card-img">
         <div class="cat-card-info">
@@ -462,6 +541,7 @@
 
   </main>
 
+  <!-- Detailed Cat Modal Pop-up -->
   <div id="cat-modal" class="modal-overlay">
     <div class="modal-card">
       <button class="close-btn" onclick="closeCatModal()">&larr; Back to list</button>
@@ -488,7 +568,7 @@
         <div class="modal-right-col">
           <div class="modal-actions">
             <a href="https://airtable.com/appDmkPBI4Ih9RlG6/shr4NRcu0QLuqn1Yt" target="_blank" rel="noopener noreferrer" class="btn-apply">APPLY TO ADOPT</a>
-            <a href="support.html" class="btn-donate">DONATE TO OUR RESCUE</a>
+            <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="btn-donate">DONATE TO OUR RESCUE</a>
           </div>
 
           <div class="behavior-card">
@@ -522,6 +602,34 @@
     </div>
   </div>
 
+  <!-- Dark Two-Column Global Footer -->
+  <footer class="dark-footer">
+    <div class="footer-top-grid">
+      <div class="footer-info-col">
+        <h3>Happy Paws Cat Rescue</h3>
+        <p>Dedicated to rescuing, rehabilitating, and rehoming cats in need.</p>
+        <p>Email: <a href="mailto:info@happypawscatrescue.org">info@happypawscatrescue.org</a></p>
+      </div>
+      <div class="footer-nav-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="cats.html">Adoptable Cats</a></li>
+          <li><a href="support.html">Support Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer">Donate via PayPal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      &copy; 2026 Happy Paws Cat Rescue. All rights reserved. | Hosted on Cloudflare Pages
+    </div>
+  </footer>
+
+  <!-- Filter & Modal Scripts -->
   <script>
     function filterCats() {
       const selectedAge = document.getElementById('age-filter').value;
