@@ -176,7 +176,7 @@
       margin-bottom: 6px;
     }
 
-    /* Buttons */
+    /* Buttons & Donation Widget */
     .btn-outline-pill {
       display: inline-block;
       padding: 10px 28px;
@@ -195,22 +195,60 @@
       color: #ffffff;
     }
 
-    .btn-paypal {
+    .donation-widget-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn-powr-donate {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       background-color: #0070BA;
       color: #ffffff;
-      padding: 12px 28px;
+      padding: 12px 36px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      margin-top: 10px;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       transition: background-color 0.2s ease;
     }
 
-    .btn-paypal:hover {
+    .btn-powr-donate:hover {
       background-color: #005EA6;
+    }
+
+    .payment-badge-img {
+      height: 24px;
+      width: auto;
+      display: block;
+    }
+
+    .powr-credit-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #4A4A4A;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .powr-credit-icon {
+      width: 18px;
+      height: 18px;
+      background-color: #2D8CFF;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
     }
 
     /* Testimonials Section */
@@ -386,9 +424,18 @@
         <h2>Donations</h2>
         <p>It costs, on average, £200 to rehome a cat. Obviously if they need medical attention it can be considerably more. Donations help us to keep helping the cats that need us.</p>
         <p>We would be extremely grateful if you could consider making a one off donation or a standing order to help us on a monthly basis.</p>
-        <a href="https://www.paypal.com/paypalme/stocktoncatrescue" target="_blank" rel="noopener noreferrer" class="btn-paypal">
-          💳 Please Donate
-        </a>
+        
+        <!-- POWR Donation Widget -->
+        <div class="donation-widget-wrapper">
+          <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="btn-powr-donate">
+            💳 Please Donate
+          </a>
+          <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmktg.png" alt="Visa Mastercard Amex Discover PayPal" class="payment-badge-img">
+          <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="powr-credit-link">
+            <span class="powr-credit-icon">⚡</span> Made with <strong>POWR</strong>
+          </a>
+        </div>
+
       </div>
     </div>
 
