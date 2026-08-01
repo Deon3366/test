@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Happy Paws Cat Rescue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8F3EC;
+      color: #4A4A4A;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background-color: #F8F3EC;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #D81B60;
+      font-size: 1.2rem;
+    }
+
+    .logo-icon {
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333333;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .nav-links a.active {
+      color: #E91E63;
+    }
+
+    .nav-links li.dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      padding: 8px 0;
+      margin: 0;
+      list-style: none;
+      z-index: 1000;
+    }
+
+    .dropdown-menu li {
+      width: 100%;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px 16px;
+      color: #333333;
+      text-decoration: none;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f5f5f5;
+      color: #e91e63;
+    }
+
+    .nav-links li.dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* About Section Layout */
+    .about-container {
+      max-width: 1100px;
+      margin: 40px auto 80px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      position: relative;
+    }
+
+    /* Left Text Card */
+    .about-card {
+      background-color: #F8F3EC;
+      border: 2px solid #6D2344;
+      border-radius: 30px;
+      padding: 40px;
+      z-index: 2;
+      margin-top: 40px;
+      margin-right: -60px;
+    }
+
+    .about-card h1 {
+      color: #E91E63;
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .about-card p {
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      color: #555555;
+      line-height: 1.6;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Right Column (Image + Testimonials Link) */
+    .about-right-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+    }
+
+    .image-wrapper {
+      width: 100%;
+      border: 2px solid #6D2344;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .testimonials-cta {
+      margin-top: 40px;
+      text-align: center;
+      max-width: 380px;
+    }
+
+    .testimonials-cta p {
+      color: #E91E63;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .btn-outline-pill {
+      display: inline-block;
+      padding: 10px 30px;
+      border: 2px solid #4A4A4A;
+      border-radius: 50px;
+      color: #333333;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline-pill:hover {
+      background-color: #4A4A4A;
+      color: #ffffff;
+    }
+
+    /* Responsive scaling */
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 20px;
+      }
+      .about-container {
+        grid-template-columns: 1fr;
+      }
+      .about-card {
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+      .image-wrapper img {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🐾</span> HAPPY PAWS
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="cats.html">Cats</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle">More ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <main class="about-container">
+    <!-- Left Overlapping Card -->
+    <div class="about-card">
+      <h1>ABOUT US</h1>
+      <p>Happy Paws Cat Rescue was founded by myself, Katrina. I've had a passion for helping cats all my life—ever since I was a little girl, I would always try to help cats in need. I always dreamed of opening my own rescue when I got older, and now that dream is a reality.</p>
+      <p>The rescue began three years ago in the North East of England, in a small town called Stockton. From there, we expanded further, and we now also have a branch in Birmingham, allowing us to rescue and rehome cats nationwide. We're even taking over Banbury, having rehomed so many of our rescues there and connecting with some lovely fosters in the area too.</p>
+      <p>Our team is made up of dedicated volunteers who work tirelessly to ensure that every cat in our care receives the love and support they deserve. From rescuing strays to rehabilitating and rehoming them, we're committed to making a difference in the lives of cats in need.</p>
+    </div>
+
+    <!-- Right Image & CTA -->
+    <div class="about-right-col">
+      <div class="image-wrapper">
+        <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=800&q=80" alt="Rescue cat receiving care">
+      </div>
+      <div class="testimonials-cta">
+        <p>Read what our adopters and supporters have said about our rescue.</p>
+        <a href="testimonials.html" class="btn-outline-pill">Testimonials</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
