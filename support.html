@@ -272,7 +272,7 @@
       opacity: 0.5;
     }
 
-    /* Slideshow Styles */
+    /* Manual Carousel Slideshow */
     .slideshow-container {
       position: relative;
       max-width: 800px;
@@ -306,7 +306,8 @@
 
     .slide-author {
       color: #6D2344;
-      font-weight: 500;
+      font-weight: 600;
+      font-style: italic;
       font-size: 1rem;
     }
 
@@ -316,11 +317,16 @@
       transform: translateY(-50%);
       background: none;
       border: none;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #6D2344;
       cursor: pointer;
       padding: 10px;
       z-index: 10;
+      transition: color 0.2s ease;
+    }
+
+    .nav-arrow:hover {
+      color: #E91E63;
     }
 
     .nav-arrow.left { left: -40px; }
@@ -329,8 +335,9 @@
     .dots-container {
       display: flex;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
       margin-top: 30px;
+      flex-wrap: wrap;
     }
 
     .dot {
@@ -522,7 +529,7 @@
           <div class="official-card-row">
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#1A1F71"/><path d="M15.8 17.5l1.6-9.9h2.6l-1.6 9.9h-2.6zm9.3-9.7c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.2 2.7.9.5 1.3.8 1.3 1.2 0 .6-.7.9-1.4.9-.9 0-1.5-.2-2.3-.5l-.3-.2-.3 2c.6.3 1.7.5 2.8.5 2.7 0 4.4-1.3 4.4-3.4 0-1.1-.7-2-2.1-2.7-.9-.4-1.4-.7-1.4-1.2 0-.4.5-.8 1.4-.8.8 0 1.4.2 1.9.4l.2.1.3-1.8zm6.5 0h-2c-.6 0-1.1.2-1.3.8l-3.7 8.9h2.7l.5-1.5h3.3l.3 1.5h2.4l-2.2-9.7zm-2.7 6.3l1.4-3.7.8 3.7h-2.2zm-17.7-6.3l-2.5 6.7-.3-1.3c-.5-1.7-2-3.5-3.8-4.4l2.4 9h2.7l4-9.9h-2.5z" fill="#FFF"/><path d="M9.8 7.8H5.6l-.1.3c3.3.8 5.5 2.8 6.4 5.2l-.9-4.7c-.2-.6-.6-.8-1.2-.8z" fill="#FAA61A"/></svg>
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#0A0A23"/><circle cx="15" cy="13" r="8" fill="#EB001B"/><circle cx="25" cy="13" r="8" fill="#F79E1B" fill-opacity="0.92"/></svg>
-            <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#006FCF"/><path d="M6 10h3.5l1 2.2 1-2.2H15v6h-1.8v-3.7l-1.1 2.5h-1.2l-1.1-2.5V16H6v-6zm10 0h5v1.4h-3.2v.9h3v1.4h-3v1h3.3V16h-5.1v-6zm6 0h2l1.2 2 1.2-2h2v6h-1.8v-3.5l-1.4 2.3h-.1l-1.4-2.3V16h-1.7v-6z" fill="#FFF"/></svg>
+            <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#006FCF"/><path d="M6 10h3.5l1 2.2 1-2.2H15v6h-1.8v-3.7l-1.1 2.5h-1.2l-1.1-2.5V16H6v-6zm10 0h5v1.4h-3.2v.9h3v1.4h-3v1h3.3V16h-5.1v-6zm6 0h2l1.2 2 1.2-2h2v6h-1.8v-3.5l-1.4 2.3h-.1l-1.4-2.3V16H17v-6z" fill="#FFF"/></svg>
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/><path d="M0 17 Q 20 25 40 17 L 40 26 L 0 26 Z" fill="#F47B20"/><text x="4" y="14" fill="#231F20" font-family="sans-serif" font-weight="bold" font-size="6.5">DISCOVER</text></svg>
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#003087"/><path d="M12.5 7.5h4.2c2.1 0 3.3.9 3 2.6-.4 2.2-2.1 3.4-4.2 3.4h-1.5l-1 5H10l2.5-11zm2.7 4h1.1c1.1 0 1.9-.5 2.1-1.4.2-1-.4-1.4-1.4-1.4h-1.1l-.7 2.8z" fill="#009CDE"/><path d="M15.5 9.5h4.2c2.1 0 3.3.9 3 2.6-.4 2.2-2.1 3.4-4.2 3.4h-1.5l-1 5H13l2.5-11zm2.7 4h1.1c1.1 0 1.9-.5 2.1-1.4.2-1-.4-1.4-1.4-1.4h-1.1l-.7 2.8z" fill="#FFF" fill-opacity="0.9"/></svg>
           </div>
@@ -555,40 +562,109 @@
 
   <div class="dotted-divider"></div>
 
-  <!-- Testimonials Manual Slideshow -->
+  <!-- Testimonials Manual Slideshow (All 12 Real Testimonials, No Auto-Scroll) -->
   <div class="slideshow-container">
     <button class="nav-arrow left" onclick="prevSlide()">&larr;</button>
     <button class="nav-arrow right" onclick="nextSlide()">&rarr;</button>
 
+    <!-- 1. Kathleen Lily Arnold -->
     <div class="slide active">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Being with this rescue and adopting our new family member was amazing. They were able to help us find an amazing addition to the family and we couldn't be any more grateful. Thank you!</p>
       <p class="slide-author">Kathleen Lily Arnold</p>
     </div>
 
+    <!-- 2. Megan Sobotowska -->
     <div class="slide">
       <div class="quote-icon">“</div>
-      <p class="slide-quote">Where do I even start! What an AMAZING experience from start to finish we have had adopting our beautiful kittens. Such a professional and knowledgeable service.</p>
+      <p class="slide-quote">Where do I even start! What an AMAZING experience from start to finish we have had adopting our beautiful kittens. Such a professional and knowledgeable service. Katrina you are a blessing to the world!</p>
       <p class="slide-author">Megan Sobotowska</p>
     </div>
 
+    <!-- 3. Susan Scott -->
     <div class="slide">
       <div class="quote-icon">“</div>
-      <p class="slide-quote">We adopted a beautiful cat called Penny from this cat rescue charity and could not fault it. We had great communication throughout the adoption process.</p>
+      <p class="slide-quote">We adopted a beautiful cat called Penny from this cat rescue charity and could not fault it. We had great communication throughout the adoption process. Penny was dropped off with toys, a cat tower, food and litter tray!</p>
       <p class="slide-author">Susan Scott</p>
     </div>
 
+    <!-- 4. Tracey McCarthy -->
     <div class="slide">
       <div class="quote-icon">“</div>
-      <p class="slide-quote">The care that the cats have had with their fosterer before reaching us has been super. We cannot recommend this organisation highly enough!</p>
+      <p class="slide-quote">Katrina offered space to Chester, a beautiful tabby boy. Vicki kindly drove to Stafford Services to collect him. I am so grateful — this boy deserves a forever home and Happy Paws have given him that chance.</p>
+      <p class="slide-author">Tracey McCarthy</p>
+    </div>
+
+    <!-- 5. Lucca Addy -->
+    <div class="slide">
+      <div class="quote-icon">“</div>
+      <p class="slide-quote">We are the delighted new owners of Kitty and Rosie. The care that the cats have had with their fosterer before reaching us has been super. We cannot recommend this organisation highly enough!</p>
       <p class="slide-author">Lucca Addy</p>
     </div>
 
+    <!-- 6. Maggie Gilchrist -->
+    <div class="slide">
+      <div class="quote-icon">“</div>
+      <p class="slide-quote">I have been a supporter of Happy Paws for some time now. Katrina works tirelessly to ensure the best for every cat/kitten that comes into her care. I would 100% recommend Happy Paws for adoption!</p>
+      <p class="slide-author">Maggie Gilchrist</p>
+    </div>
+
+    <!-- 7. Charlotte Harte -->
+    <div class="slide">
+      <div class="quote-icon">“</div>
+      <p class="slide-quote">Katrina has been the BIGGEST help in saving my life and my precious kitties. The time, effort, money, miles and energy that Kat puts in to help is unmatched. Thank you so much Kat!</p>
+      <p class="slide-author">Charlotte Harte</p>
+    </div>
+
+    <!-- 8. Petra Kucerova -->
+    <div class="slide">
+      <div class="quote-icon">“</div>
+      <p class="slide-quote">Amazing experience. Katrina Rose was amazing, very pleasant and responsive. Even set up a chat so I could get to know Milo. The love and dedication of this rescue is second to none!</p>
+      <p class="slide-author">Petra Kucerova</p>
+    </div>
+
+    <!-- 9. Purrs Cat Rescue -->
+    <div class="slide">
+      <div class="quote-icon">“</div>
+      <p class="slide-quote">An absolutely wonderful team! It's lovely to see the work they do for the kitties in their area, finding them their forever homes, providing foster care & offering help and advice.</p>
+      <p class="slide-author">Purrs Cat Rescue</p>
+    </div>
+
+    <!-- 10. Jessica Barton -->
+    <div class="slide">
+      <div class="quote-icon">“</div>
+      <p class="slide-quote">Five star! I have nothing except good words to say about this lovely rescue whose kind intentions and love for cats show through their work. Thank you for all that you do!</p>
+      <p class="slide-author">Jessica Barton</p>
+    </div>
+
+    <!-- 11. Janice Peart -->
+    <div class="slide">
+      <div class="quote-icon">“</div>
+      <p class="slide-quote">I help run Pet Angels Wearside and have worked alongside Katrina a lot. She took in an elderly cat that needed emergency vet treatment and then found the perfect home for her!</p>
+      <p class="slide-author">Janice Peart</p>
+    </div>
+
+    <!-- 12. Nichola Davey & Corinna Laurie -->
+    <div class="slide">
+      <div class="quote-icon">“</div>
+      <p class="slide-quote">Communication was amazing from the start and Katrina and Vicki were really helpful. What a wonderful charity doing amazing work. The cats are so cared for!</p>
+      <p class="slide-author">Nichola Davey & Corinna Laurie</p>
+    </div>
+
+    <!-- Dot Indicators for all 12 slides -->
     <div class="dots-container">
       <span class="dot active" onclick="currentSlide(0)"></span>
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+      <span class="dot" onclick="currentSlide(7)"></span>
+      <span class="dot" onclick="currentSlide(8)"></span>
+      <span class="dot" onclick="currentSlide(9)"></span>
+      <span class="dot" onclick="currentSlide(10)"></span>
+      <span class="dot" onclick="currentSlide(11)"></span>
     </div>
   </div>
 
@@ -619,7 +695,7 @@
     </div>
   </footer>
 
-  <!-- Manual-Only Slideshow Script -->
+  <!-- Manual-Only Slideshow Script (No Auto-Scroll) -->
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
