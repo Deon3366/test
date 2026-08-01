@@ -8,6 +8,50 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Dropdown Navigation Menu Styles */
+    .nav-links li.dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      padding: 8px 0;
+      margin: 0;
+      list-style: none;
+      z-index: 1000;
+    }
+
+    .dropdown-menu li {
+      width: 100%;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px 16px;
+      color: #333333;
+      text-decoration: none;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #f5f5f5;
+      color: #e91e63;
+    }
+
+    /* Show dropdown on hover */
+    .nav-links li.dropdown:hover .dropdown-menu {
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -29,12 +73,17 @@
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#cats">Available Cats</a></li>
-          <li><a href="#support">Support Us</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#cats">Cats</a></li>
+          <li><a href="#support">Support</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle">More ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#shop">Shop</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </li>
           <li><a href="https://www.paypal.com/paypalme/stocktoncatrescue" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Donate Now</a></li>
         </ul>
       </nav>
