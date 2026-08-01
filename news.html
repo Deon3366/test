@@ -199,6 +199,70 @@
       color: #ffffff;
     }
 
+    /* Dark Two-Column Global Footer */
+    .dark-footer {
+      background-color: #0d1222;
+      color: #ffffff;
+      padding: 60px 80px 40px;
+    }
+
+    .footer-top-grid {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .footer-info-col h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-info-col p {
+      color: #cccccc;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-info-col a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-nav-col h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .footer-nav-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-nav-col a {
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-col a:hover {
+      color: #E91E63;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid #1a2238;
+      padding-top: 25px;
+      text-align: center;
+      color: #888888;
+      font-size: 0.85rem;
+    }
+
     @media (max-width: 768px) {
       .navbar {
         padding: 20px;
@@ -212,14 +276,22 @@
       .news-block h2 {
         font-size: 1.8rem;
       }
+      .footer-top-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+      .dark-footer {
+        padding: 40px 20px 30px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
-      <span class="logo-icon">🐾</span> HAPPY PAWS
+      <span class="logo-icon">🐾</span> Happy Paws Cat Rescue
     </a>
     <nav>
       <ul class="nav-links">
@@ -232,7 +304,6 @@
           <ul class="dropdown-menu">
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="news.html" style="color: #E91E63; font-weight: bold;">News</a></li>
-            <li><a href="shop.html">Shop</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </li>
@@ -242,27 +313,32 @@
 
   <main class="news-container">
     
+    <!-- Hero Cat Header Image -->
     <div class="hero-image-wrapper">
       <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=80" alt="News Cat Header">
     </div>
 
     <h1 class="page-title">News</h1>
 
+    <!-- Breaking News Block -->
     <section class="news-block">
       <h2>Breaking News</h2>
       <p>We are extremely excited to announce that our rescue will be featured on BBC Banbury on 5th February.</p>
     </section>
 
+    <!-- Other News Block -->
     <section class="news-block">
       <h2>Other News</h2>
       <p>Keep an eye on this section of our site as we will be frequently updating it with our news and information.</p>
     </section>
 
+    <!-- Events Block -->
     <section class="news-block">
       <h2>Events</h2>
       <p>We are always holding events to raise awareness of our rescue. These are some of the ones we will be involved with over the next few months.</p>
     </section>
 
+    <!-- Facebook Live Feed Section -->
     <section class="facebook-section">
       <h2>Don't forget to also follow us on Facebook.</h2>
       
@@ -287,6 +363,33 @@
     </section>
 
   </main>
+
+  <!-- Dark Two-Column Global Footer -->
+  <footer class="dark-footer">
+    <div class="footer-top-grid">
+      <div class="footer-info-col">
+        <h3>Happy Paws Cat Rescue</h3>
+        <p>Dedicated to rescuing, rehabilitating, and rehoming cats in need.</p>
+        <p>Email: <a href="mailto:info@happypawscatrescue.org">info@happypawscatrescue.org</a></p>
+      </div>
+      <div class="footer-nav-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="cats.html">Adoptable Cats</a></li>
+          <li><a href="support.html">Support Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer">Donate via PayPal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      &copy; 2026 Happy Paws Cat Rescue. All rights reserved. | Hosted on Cloudflare Pages
+    </div>
+  </footer>
 
 </body>
 </html>
