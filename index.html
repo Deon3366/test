@@ -383,13 +383,21 @@
       margin-bottom: 15px;
     }
 
-    /* Testimonials Slider Section */
+    /* Testimonials Manual Carousel Section */
     .testimonials-slider-section {
       padding: 60px 20px;
       text-align: center;
       position: relative;
       max-width: 900px;
       margin: 0 auto;
+    }
+
+    .slide-item {
+      display: none;
+    }
+
+    .slide-item.active {
+      display: block;
     }
 
     .slide-quote-mark {
@@ -409,19 +417,26 @@
 
     .slider-author-name {
       color: #6D2344;
-      font-weight: 500;
+      font-weight: 600;
+      font-style: italic;
     }
 
     .nav-arrow {
       position: absolute;
-      top: 50%;
+      top: 45%;
       transform: translateY(-50%);
       background: none;
       border: none;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #6D2344;
       cursor: pointer;
       padding: 10px;
+      z-index: 10;
+      transition: color 0.2s ease;
+    }
+
+    .nav-arrow:hover {
+      color: #E91E63;
     }
 
     .nav-arrow.left { left: -40px; }
@@ -430,16 +445,18 @@
     .dots-row {
       display: flex;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
       margin-top: 30px;
+      flex-wrap: wrap;
     }
 
     .dot-item {
-      width: 100px;
+      width: 10px;
       height: 10px;
       border-radius: 50%;
       border: 2px solid #6D2344;
       cursor: pointer;
+      transition: background-color 0.2s ease;
     }
 
     .dot-item.active {
@@ -507,44 +524,67 @@
       border-radius: 20px;
     }
 
-    /* Footer */
-    .site-footer {
-      background-color: #333333;
+    /* Dark Two-Column Footer */
+    .dark-footer {
+      background-color: #0d1222;
       color: #ffffff;
-      padding: 50px 20px 30px;
-      text-align: center;
+      padding: 60px 80px 40px;
     }
 
-    .footer-email {
+    .footer-top-grid {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .footer-info-col h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-info-col p {
+      color: #cccccc;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-info-col a {
       color: #ffffff;
-      font-size: 1.8rem;
       text-decoration: underline;
-      display: inline-block;
-      margin-bottom: 25px;
     }
 
-    .social-icons-row {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 25px;
+    .footer-nav-col h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 15px;
     }
 
-    .social-icon-circle {
-      width: 36px;
-      height: 36px;
-      background-color: #666666;
-      border-radius: 50%;
+    .footer-nav-col ul {
+      list-style: none;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-nav-col a {
+      color: #cccccc;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
     }
 
-    .footer-copyright {
-      color: #aaaaaa;
+    .footer-nav-col a:hover {
+      color: #E91E63;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid #1a2238;
+      padding-top: 25px;
+      text-align: center;
+      color: #888888;
       font-size: 0.85rem;
     }
 
@@ -552,17 +592,21 @@
       .navbar { padding: 20px; }
       .hero-banner { padding-left: 20px; height: 360px; }
       .hero-content h1 { font-size: 2.2rem; }
-      .crisis-section, .mission-container, .dark-help-container, .newsletter-card {
+      .crisis-section, .mission-container, .dark-help-container, .newsletter-card, .footer-top-grid {
         flex-direction: column;
         text-align: center;
       }
       .story-grid { grid-template-columns: 1fr; }
       .impact-grid { grid-template-columns: 1fr; }
+      .nav-arrow.left { left: 0; }
+      .nav-arrow.right { right: 0; }
+      .dark-footer { padding: 40px 20px 30px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
       <span class="logo-icon">🐾</span> HAPPY PAWS
@@ -585,6 +629,7 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero-banner">
     <div class="hero-content">
       <h1>HELPING CATS IN NEED</h1>
@@ -592,6 +637,7 @@
     </div>
   </section>
 
+  <!-- Crisis Banner Section -->
   <section class="crisis-section">
     <div class="crisis-text">
       <h2>💔 Our Rescue is in Crisis</h2>
@@ -605,6 +651,7 @@
     </div>
   </section>
 
+  <!-- Mission Strip -->
   <section class="mission-strip">
     <div class="mission-container">
       <h2 class="mission-title">Our Mission</h2>
@@ -612,6 +659,7 @@
     </div>
   </section>
 
+  <!-- Quick Impact Action Grid -->
   <section class="impact-grid">
     <div class="impact-card">
       <div class="impact-card-icon">🐱</div>
@@ -630,6 +678,7 @@
     </div>
   </section>
 
+  <!-- Cats Available Preview -->
   <section class="cats-preview-section">
     <h2>Cats Available for Adoption</h2>
     <div class="divider-line"></div>
@@ -654,6 +703,7 @@
     </div>
   </section>
 
+  <!-- Help Us Save Banner -->
   <section class="dark-help-banner">
     <div class="dark-help-container">
       <h2>Help Us Save<br>a Life Today</h2>
@@ -664,6 +714,7 @@
     </div>
   </section>
 
+  <!-- Our Story Grid -->
   <section class="story-grid">
     <div class="story-pink-box">
       <h2>Our<br>Story</h2>
@@ -676,42 +727,113 @@
     </div>
   </section>
 
+  <!-- Manual Testimonials Carousel Section (No Auto-Scroll) -->
   <section class="testimonials-slider-section">
     <button class="nav-arrow left" onclick="prevSlide()">&larr;</button>
     <button class="nav-arrow right" onclick="nextSlide()">&rarr;</button>
 
+    <!-- 1. Kathleen Lily Arnold -->
     <div class="slide-item active">
       <div class="slide-quote-mark">“</div>
       <p class="slider-quote-text">Being with this rescue and adopting our new family member was amazing. They were able to help us find an amazing addition to the family and we couldn't be any more grateful. Thank you!</p>
       <p class="slider-author-name">Kathleen Lily Arnold</p>
     </div>
 
-    <div class="slide-item" style="display:none;">
+    <!-- 2. Megan Sobotowska -->
+    <div class="slide-item">
       <div class="slide-quote-mark">“</div>
-      <p class="slider-quote-text">Where do I even start! What an AMAZING experience from start to finish we have had adopting our beautiful kittens. Such a professional and knowledgeable service.</p>
+      <p class="slider-quote-text">Where do I even start! What an AMAZING experience from start to finish we have had adopting our beautiful kittens. Such a professional and knowledgeable service. Katrina you are a blessing to the world!</p>
       <p class="slider-author-name">Megan Sobotowska</p>
     </div>
 
-    <div class="slide-item" style="display:none;">
+    <!-- 3. Susan Scott -->
+    <div class="slide-item">
       <div class="slide-quote-mark">“</div>
-      <p class="slider-quote-text">We adopted a beautiful cat called Penny from this cat rescue charity and could not fault it. We had great communication throughout the adoption process.</p>
+      <p class="slider-quote-text">We adopted a beautiful cat called Penny from this cat rescue charity and could not fault it. We had great communication throughout the adoption process. Penny was dropped off with toys, a cat tower, food and litter tray!</p>
       <p class="slider-author-name">Susan Scott</p>
     </div>
 
-    <div class="slide-item" style="display:none;">
+    <!-- 4. Tracey McCarthy -->
+    <div class="slide-item">
       <div class="slide-quote-mark">“</div>
-      <p class="slider-quote-text">The care that the cats have had with their fosterer before reaching us has been super. We cannot recommend this organisation highly enough!</p>
+      <p class="slider-quote-text">Katrina offered space to Chester, a beautiful tabby boy. Vicki kindly drove to Stafford Services to collect him. I am so grateful — this boy deserves a forever home and Happy Paws have given him that chance.</p>
+      <p class="slider-author-name">Tracey McCarthy</p>
+    </div>
+
+    <!-- 5. Lucca Addy -->
+    <div class="slide-item">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">We are the delighted new owners of Kitty and Rosie. The care that the cats have had with their fosterer before reaching us has been super. We cannot recommend this organisation highly enough!</p>
       <p class="slider-author-name">Lucca Addy</p>
     </div>
 
+    <!-- 6. Maggie Gilchrist -->
+    <div class="slide-item">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">I have been a supporter of Happy Paws for some time now. Katrina works tirelessly to ensure the best for every cat/kitten that comes into her care. I would 100% recommend Happy Paws for adoption!</p>
+      <p class="slider-author-name">Maggie Gilchrist</p>
+    </div>
+
+    <!-- 7. Charlotte Harte -->
+    <div class="slide-item">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">Katrina has been the BIGGEST help in saving my life and my precious kitties. The time, effort, money, miles and energy that Kat puts in to help is unmatched. Thank you so much Kat!</p>
+      <p class="slider-author-name">Charlotte Harte</p>
+    </div>
+
+    <!-- 8. Petra Kucerova -->
+    <div class="slide-item">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">Amazing experience. Katrina Rose was amazing, very pleasant and responsive. Even set up a chat so I could get to know Milo. The love and dedication of this rescue is second to none!</p>
+      <p class="slider-author-name">Petra Kucerova</p>
+    </div>
+
+    <!-- 9. Purrs Cat Rescue -->
+    <div class="slide-item">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">An absolutely wonderful team! It's lovely to see the work they do for the kitties in their area, finding them their forever homes, providing foster care & offering help and advice.</p>
+      <p class="slider-author-name">Purrs Cat Rescue</p>
+    </div>
+
+    <!-- 10. Jessica Barton -->
+    <div class="slide-item">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">Five star! I have nothing except good words to say about this lovely rescue whose kind intentions and love for cats show through their work. Thank you for all that you do!</p>
+      <p class="slider-author-name">Jessica Barton</p>
+    </div>
+
+    <!-- 11. Janice Peart -->
+    <div class="slide-item">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">I help run Pet Angels Wearside and have worked alongside Katrina a lot. She took in an elderly cat that needed emergency vet treatment and then found the perfect home for her!</p>
+      <p class="slider-author-name">Janice Peart</p>
+    </div>
+
+    <!-- 12. Nichola Davey & Corinna Laurie -->
+    <div class="slide-item">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">Communication was amazing from the start and Katrina and Vicki were really helpful. What a wonderful charity doing amazing work. The cats are so cared for!</p>
+      <p class="slider-author-name">Nichola Davey & Corinna Laurie</p>
+    </div>
+
+    <!-- Dot Indicators for all 12 slides -->
     <div class="dots-row">
       <span class="dot-item active" onclick="setSlide(0)"></span>
       <span class="dot-item" onclick="setSlide(1)"></span>
       <span class="dot-item" onclick="setSlide(2)"></span>
       <span class="dot-item" onclick="setSlide(3)"></span>
+      <span class="dot-item" onclick="setSlide(4)"></span>
+      <span class="dot-item" onclick="setSlide(5)"></span>
+      <span class="dot-item" onclick="setSlide(6)"></span>
+      <span class="dot-item" onclick="setSlide(7)"></span>
+      <span class="dot-item" onclick="setSlide(8)"></span>
+      <span class="dot-item" onclick="setSlide(9)"></span>
+      <span class="dot-item" onclick="setSlide(10)"></span>
+      <span class="dot-item" onclick="setSlide(11)"></span>
     </div>
   </section>
 
+  <!-- Newsletter Section -->
   <section class="newsletter-section">
     <div class="newsletter-card">
       <div class="newsletter-form-wrapper">
@@ -728,42 +850,54 @@
     </div>
   </section>
 
-  <footer class="site-footer">
-    <a href="mailto:info@happypawscatrescue.org" class="footer-email">info@happypawscatrescue.org</a>
-    
-    <div class="social-icons-row">
-      <a href="https://www.facebook.com/stocktoncatrescue" target="_blank" class="social-icon-circle">f</a>
-      <a href="mailto:info@happypawscatrescue.org" class="social-icon-circle">✉</a>
+  <!-- Dark Two-Column Global Footer -->
+  <footer class="dark-footer">
+    <div class="footer-top-grid">
+      <div class="footer-info-col">
+        <h3>Happy Paws Cat Rescue</h3>
+        <p>Dedicated to rescuing, rehabilitating, and rehoming cats in need.</p>
+        <p>Email: <a href="mailto:info@happypawscatrescue.org">info@happypawscatrescue.org</a></p>
+      </div>
+      <div class="footer-nav-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="cats.html">Adoptable Cats</a></li>
+          <li><a href="support.html">Support Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer">Donate via PayPal</a></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="footer-copyright">
+    <div class="footer-bottom-bar">
       &copy; 2026 Happy Paws Cat Rescue. All rights reserved. | Hosted on Cloudflare Pages
     </div>
   </footer>
 
+  <!-- Manual-Only Carousel Script (No Auto-Scroll) -->
   <script>
     let currentIdx = 0;
     const slides = document.querySelectorAll('.slide-item');
     const dots = document.querySelectorAll('.dot-item');
 
     function renderSlide(index) {
-      slides.forEach(s => s.style.display = 'none');
+      slides.forEach(s => s.classList.remove('active'));
       dots.forEach(d => d.classList.remove('active'));
 
       currentIdx = index;
       if (currentIdx >= slides.length) currentIdx = 0;
       if (currentIdx < 0) currentIdx = slides.length - 1;
 
-      slides[currentIdx].style.display = 'block';
+      slides[currentIdx].classList.add('active');
       dots[currentIdx].classList.add('active');
     }
 
     function nextSlide() { renderSlide(currentIdx + 1); }
     function prevSlide() { renderSlide(currentIdx - 1); }
     function setSlide(index) { renderSlide(index); }
-
-    // Auto Advance every 5 seconds
-    setInterval(nextSlide, 5000);
   </script>
 
 </body>
