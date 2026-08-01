@@ -176,7 +176,7 @@
       margin-bottom: 6px;
     }
 
-    /* Buttons & Donation Widget */
+    /* Standard Buttons */
     .btn-outline-pill {
       display: inline-block;
       padding: 10px 28px;
@@ -195,60 +195,89 @@
       color: #ffffff;
     }
 
+    /* POWR Donation Widget Styles */
     .donation-widget-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 14px;
+      margin-top: 24px;
     }
 
     .btn-powr-donate {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       background-color: #0070BA;
       color: #ffffff;
-      padding: 12px 36px;
-      border-radius: 6px;
+      padding: 12px 32px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1.1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: background-color 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: background-color 0.2s ease, transform 0.1s ease;
     }
 
     .btn-powr-donate:hover {
       background-color: #005EA6;
+      transform: translateY(-1px);
     }
 
-    .payment-badge-img {
-      height: 24px;
-      width: auto;
-      display: block;
-    }
-
-    .powr-credit-link {
-      display: inline-flex;
+    /* Card Badges Row */
+    .card-badges-row {
+      display: flex;
       align-items: center;
       gap: 6px;
-      color: #4A4A4A;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
     }
 
-    .powr-credit-icon {
-      width: 18px;
-      height: 18px;
-      background-color: #2D8CFF;
-      color: #ffffff;
-      border-radius: 50%;
+    .card-badge {
+      width: 44px;
+      height: 28px;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 10px;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+
+    .badge-visa { background-color: #1A1F71; font-style: italic; font-size: 11px; }
+    .badge-mastercard { background: linear-gradient(135deg, #EB001B 50%, #F79E1B 50%); font-size: 8px; }
+    .badge-amex { background-color: #006FCF; font-size: 7px; text-align: center; line-height: 1; }
+    .badge-discover { background-color: #F47B20; border: 1px solid #E06000; font-size: 7px; }
+    .badge-paypal { background-color: #003087; font-style: italic; font-size: 10px; }
+
+    /* POWR Watermark Logo */
+    .powr-watermark-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #4A5568;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+
+    .powr-logo-icon {
+      width: 24px;
+      height: 24px;
+      background-color: #3B82F6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+    }
+
+    .powr-watermark-link strong {
+      font-weight: 700;
+      color: #2D3748;
     }
 
     /* Testimonials Section */
@@ -428,11 +457,25 @@
         <!-- POWR Donation Widget -->
         <div class="donation-widget-wrapper">
           <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="btn-powr-donate">
-            💳 Please Donate
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            Please Donate
           </a>
-          <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/cc-badges-ppmktg.png" alt="Visa Mastercard Amex Discover PayPal" class="payment-badge-img">
-          <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="powr-credit-link">
-            <span class="powr-credit-icon">⚡</span> Made with <strong>POWR</strong>
+
+          <!-- Payment Card Badges -->
+          <div class="card-badges-row">
+            <div class="card-badge badge-visa">VISA</div>
+            <div class="card-badge badge-mastercard">MC</div>
+            <div class="card-badge badge-amex">AM EX</div>
+            <div class="card-badge badge-discover">DISC</div>
+            <div class="card-badge badge-paypal">PayPal</div>
+          </div>
+
+          <!-- POWR Branding Watermark -->
+          <a href="https://www.powr.io/paypal-button-website-app?utm_src=watermark-paypal-button" target="_blank" rel="noopener noreferrer" class="powr-watermark-link">
+            <span class="powr-logo-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </span>
+            Made with <strong>POWR</strong>
           </a>
         </div>
 
