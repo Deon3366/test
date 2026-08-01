@@ -200,7 +200,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       margin-top: 24px;
     }
 
@@ -208,14 +208,14 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       background-color: #0070BA;
       color: #ffffff;
-      padding: 10px 28px;
+      padding: 12px 34px;
       border-radius: 6px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
+      font-weight: 700;
+      font-size: 1.1rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.12);
       transition: background-color 0.2s ease;
     }
@@ -224,18 +224,20 @@
       background-color: #005EA6;
     }
 
-    /* SVG Payment Badges Container */
-    .payment-badges-svg-row {
+    /* Official Payment Badges */
+    .official-card-row {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
-    .payment-badges-svg-row svg {
-      height: 28px;
-      width: auto;
+    .card-svg-badge {
+      height: 26px;
+      width: 40px;
       border-radius: 4px;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: block;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     }
 
     /* POWR Watermark Styling */
@@ -248,8 +250,8 @@
     }
 
     .powr-logo-badge {
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
       background-color: #3B82F6;
       border-radius: 50%;
       display: flex;
@@ -259,14 +261,14 @@
     }
 
     .powr-watermark-text {
-      font-size: 1.2rem;
-      color: #555555;
+      font-size: 1.25rem;
+      color: #4A5568;
       font-weight: 400;
       letter-spacing: -0.3px;
     }
 
     .powr-watermark-text strong {
-      color: #333333;
+      color: #1A202C;
       font-weight: 700;
     }
 
@@ -448,28 +450,32 @@
         <div class="donation-widget-wrapper">
           <!-- Please Donate Button -->
           <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="btn-powr-donate">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
             Please Donate
           </a>
 
-          <!-- Embedded Vector Badges (Visa, Mastercard, Amex, Discover, PayPal) -->
-          <div class="payment-badges-svg-row">
+          <!-- Official Payment Card Vector Badges -->
+          <div class="official-card-row">
             <!-- VISA -->
-            <svg viewBox="0 0 50 32" width="44" height="28"><rect width="50" height="32" rx="4" fill="#1A1F71"/><text x="10" y="21" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="13" font-style="italic">VISA</text></svg>
-            <!-- Mastercard -->
-            <svg viewBox="0 0 50 32" width="44" height="28"><rect width="50" height="32" rx="4" fill="#000040"/><circle cx="19" cy="16" r="10" fill="#EB001B"/><circle cx="31" cy="16" r="10" fill="#F79E1B" fill-opacity="0.9"/></svg>
-            <!-- AMEX -->
-            <svg viewBox="0 0 50 32" width="44" height="28"><rect width="50" height="32" rx="4" fill="#006FCF"/><text x="6" y="16" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="7">AMERICAN</text><text x="11" y="23" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="7">EXPRESS</text></svg>
+            <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#1A1F71"/><path d="M15.8 17.5l1.6-9.9h2.6l-1.6 9.9h-2.6zm9.3-9.7c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.2 2.7.9.5 1.3.8 1.3 1.2 0 .6-.7.9-1.4.9-.9 0-1.5-.2-2.3-.5l-.3-.2-.3 2c.6.3 1.7.5 2.8.5 2.7 0 4.4-1.3 4.4-3.4 0-1.1-.7-2-2.1-2.7-.9-.4-1.4-.7-1.4-1.2 0-.4.5-.8 1.4-.8.8 0 1.4.2 1.9.4l.2.1.3-1.8zm6.5 0h-2c-.6 0-1.1.2-1.3.8l-3.7 8.9h2.7l.5-1.5h3.3l.3 1.5h2.4l-2.2-9.7zm-2.7 6.3l1.4-3.7.8 3.7h-2.2zm-17.7-6.3l-2.5 6.7-.3-1.3c-.5-1.7-2-3.5-3.8-4.4l2.4 9h2.7l4-9.9h-2.5z" fill="#FFF"/><path d="M9.8 7.8H5.6l-.1.3c3.3.8 5.5 2.8 6.4 5.2l-.9-4.7c-.2-.6-.6-.8-1.2-.8z" fill="#FAA61A"/></svg>
+            
+            <!-- MasterCard -->
+            <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#0A0A23"/><circle cx="15" cy="13" r="8" fill="#EB001B"/><circle cx="25" cy="13" r="8" fill="#F79E1B" fill-opacity="0.92"/></svg>
+            
+            <!-- Amex -->
+            <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#006FCF"/><path d="M6 10h3.5l1 2.2 1-2.2H15v6h-1.8v-3.7l-1.1 2.5h-1.2l-1.1-2.5V16H6v-6zm10 0h5v1.4h-3.2v.9h3v1.4h-3v1h3.3V16h-5.1v-6zm6 0h2l1.2 2 1.2-2h2v6h-1.8v-3.5l-1.4 2.3h-.1l-1.4-2.3V16h-1.7v-6z" fill="#FFF"/></svg>
+            
             <!-- Discover -->
-            <svg viewBox="0 0 50 32" width="44" height="28"><rect width="50" height="32" rx="4" fill="#FFFFFF" stroke="#E2E8F0"/><path d="M0 22 Q 25 32 50 22 L 50 32 L 0 32 Z" fill="#F47B20"/><text x="5" y="18" fill="#231F20" font-family="sans-serif" font-weight="bold" font-size="8">DISCOVER</text></svg>
+            <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/><path d="M0 17 Q 20 25 40 17 L 40 26 L 0 26 Z" fill="#F47B20"/><text x="4" y="14" fill="#231F20" font-family="sans-serif" font-weight="bold" font-size="6.5">DISCOVER</text></svg>
+            
             <!-- PayPal -->
-            <svg viewBox="0 0 50 32" width="44" height="28"><rect width="50" height="32" rx="4" fill="#003087"/><text x="8" y="21" fill="#009CDE" font-family="sans-serif" font-weight="bold" font-size="12" font-style="italic">Pay<tspan fill="#FFFFFF">Pal</tspan></text></svg>
+            <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#003087"/><path d="M12.5 7.5h4.2c2.1 0 3.3.9 3 2.6-.4 2.2-2.1 3.4-4.2 3.4h-1.5l-1 5H10l2.5-11zm2.7 4h1.1c1.1 0 1.9-.5 2.1-1.4.2-1-.4-1.4-1.4-1.4h-1.1l-.7 2.8z" fill="#009CDE"/><path d="M15.5 9.5h4.2c2.1 0 3.3.9 3 2.6-.4 2.2-2.1 3.4-4.2 3.4h-1.5l-1 5H13l2.5-11zm2.7 4h1.1c1.1 0 1.9-.5 2.1-1.4.2-1-.4-1.4-1.4-1.4h-1.1l-.7 2.8z" fill="#FFF" fill-opacity="0.9"/></svg>
           </div>
 
           <!-- Made with POWR Watermark -->
           <a href="https://www.powr.io/paypal-button-website-app?utm_src=watermark-paypal-button" target="_blank" rel="noopener noreferrer" class="powr-watermark-container">
             <span class="powr-logo-badge">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
             </span>
             <span class="powr-watermark-text">Made with <strong>POWR</strong></span>
           </a>
