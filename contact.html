@@ -173,7 +173,6 @@
       width: 100%;
       padding: 12px 20px;
       background-color: #F8F3EC;
-      border: 1.5 solid #333333;
       border: 1.5px solid #4A4A4A;
       border-radius: 50px;
       font-family: inherit;
@@ -257,7 +256,6 @@
 </head>
 <body>
 
-  <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
       <span class="logo-icon">🐾</span> HAPPY PAWS
@@ -281,7 +279,6 @@
     </nav>
   </header>
 
-  <!-- Hero Background Banner -->
   <section class="contact-hero">
     <div class="contact-hero-text">
       <h1>We love to hear from our wonderful supporters.</h1>
@@ -289,34 +286,33 @@
     </div>
   </section>
 
-  <!-- Contact Form Section -->
   <main class="form-wrapper">
     <div class="contact-card">
-      <form class="contact-form" action="#" method="POST">
+      <form class="contact-form" action="mailto:info@happypawscatrescue.org" method="POST" enctype="text/plain">
         
         <div class="form-group">
           <label for="first-name">First name *</label>
-          <input type="text" id="first-name" class="form-input" required>
+          <input type="text" id="first-name" name="First Name" class="form-input" required>
         </div>
 
         <div class="form-group">
           <label for="last-name">Last name *</label>
-          <input type="text" id="last-name" class="form-input" required>
+          <input type="text" id="last-name" name="Last Name" class="form-input" required>
         </div>
 
         <div class="form-group">
           <label for="email">Email *</label>
-          <input type="email" id="email" class="form-input" required>
+          <input type="email" id="email" name="Email" class="form-input" required>
         </div>
 
         <div class="form-group">
           <label for="cat-name">Please enter the name of the cat you are interested in. *</label>
-          <input type="text" id="cat-name" class="form-input" required>
+          <input type="text" id="cat-name" name="Cat Interested In" class="form-input" required>
         </div>
 
         <div class="form-group">
           <label for="about-home">Tell us a little bit about yourself and the home you could offer. *</label>
-          <textarea id="about-home" class="form-textarea" placeholder="Do you live in town; how many people live with you: ages of children: other animals." required></textarea>
+          <textarea id="about-home" name="Home Details" class="form-textarea" placeholder="Do you live in town; how many people live with you: ages of children: other animals." required></textarea>
         </div>
 
         <button type="submit" class="btn-submit">Submit</button>
