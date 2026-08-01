@@ -4,12 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Paws Cat Rescue | Helping Cats in Need</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Dropdown Navigation Menu Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8F3EC;
+      color: #4A4A4A;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 80px;
+      background-color: #F8F3EC;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #D81B60;
+      font-size: 1.2rem;
+    }
+
+    .logo-icon {
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333333;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .nav-links a.active {
+      color: #E91E63;
+    }
+
     .nav-links li.dropdown {
       position: relative;
     }
@@ -47,114 +99,672 @@
       color: #e91e63;
     }
 
-    /* Show dropdown on hover */
     .nav-links li.dropdown:hover .dropdown-menu {
       display: block;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      background-image: url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding-left: 100px;
+    }
+
+    .hero-content {
+      max-width: 500px;
+    }
+
+    .hero-content h1 {
+      color: #ffffff;
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      text-transform: uppercase;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 25px;
+    }
+
+    .btn-pill-red {
+      display: inline-block;
+      padding: 12px 36px;
+      background-color: #A00000;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-pill-red:hover {
+      background-color: #700000;
+    }
+
+    /* Crisis Banner Section */
+    .crisis-section {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .crisis-text h2 {
+      color: #E91E63;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .crisis-text p {
+      color: #555555;
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .btn-outline-pill {
+      display: inline-block;
+      padding: 10px 32px;
+      border: 1.5px solid #4A4A4A;
+      border-radius: 50px;
+      color: #333333;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 15px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline-pill:hover {
+      background-color: #4A4A4A;
+      color: #ffffff;
+    }
+
+    .crisis-img-wrapper img {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* Mission Strip */
+    .mission-strip {
+      background-color: #F8D7E3;
+      padding: 50px 20px;
+      margin-bottom: 60px;
+    }
+
+    .mission-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .mission-title {
+      color: #E91E63;
+      font-size: 2.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .mission-desc {
+      color: #4A4A4A;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Impact Three Cards */
+    .impact-grid {
+      max-width: 1100px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .impact-card-icon {
+      font-size: 3rem;
+      color: #E91E63;
+      margin-bottom: 15px;
+    }
+
+    .impact-card h3 {
+      font-size: 1.4rem;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+    .impact-card p {
+      color: #666666;
+      font-size: 0.95rem;
+    }
+
+    /* Available Cats Preview */
+    .cats-preview-section {
+      background-color: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cats-preview-section h2 {
+      color: #E91E63;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .divider-line {
+      width: 50px;
+      height: 3px;
+      background-color: #333;
+      margin: 0 auto 40px;
+    }
+
+    .cats-grid-preview {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .cat-thumb-card {
+      text-decoration: none;
+    }
+
+    .cat-thumb-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .cat-thumb-card:hover .cat-thumb-img {
+      transform: translateY(-4px);
+    }
+
+    .cat-thumb-name {
+      color: #E91E63;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    /* Help Us Save Banner */
+    .dark-help-banner {
+      background-color: #333333;
+      color: #ffffff;
+      padding: 60px 20px;
+    }
+
+    .dark-help-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .dark-help-container h2 {
+      font-size: 2.8rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .dark-help-right {
+      max-width: 450px;
+    }
+
+    .dark-help-right p {
+      color: #dddddd;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    /* Our Story Section */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .story-pink-box {
+      background-color: #E91E63;
+      color: #ffffff;
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .story-pink-box h2 {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .story-pink-box .line {
+      width: 40px;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    .story-text-box {
+      background-color: #F8F3EC;
+      padding: 60px 80px;
+    }
+
+    .story-text-box h3 {
+      color: #E91E63;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .story-text-box p {
+      color: #555555;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    /* Testimonials Slider Section */
+    .testimonials-slider-section {
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .slide-quote-mark {
+      color: #6D2344;
+      font-size: 4rem;
+      font-family: Georgia, serif;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .slider-quote-text {
+      font-size: 1.2rem;
+      color: #6D2344;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .slider-author-name {
+      color: #6D2344;
+      font-weight: 500;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #6D2344;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .nav-arrow.left { left: -40px; }
+    .nav-arrow.right { right: -40px; }
+
+    .dots-row {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 30px;
+    }
+
+    .dot-item {
+      width: 100px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid #6D2344;
+      cursor: pointer;
+    }
+
+    .dot-item.active {
+      background-color: #6D2344;
+    }
+
+    /* Newsletter Card */
+    .newsletter-section {
+      background-color: #F8D7E3;
+      padding: 60px 20px;
+    }
+
+    .newsletter-card {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .newsletter-form-wrapper {
+      background-color: #F8F3EC;
+      padding: 40px;
+      border-radius: 20px;
+    }
+
+    .newsletter-form-wrapper h3 {
+      color: #E91E63;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .newsletter-form-wrapper p {
+      color: #555555;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .newsletter-input {
+      width: 100%;
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: 1px solid #4A4A4A;
+      background-color: #F8F3EC;
+      margin-bottom: 15px;
+      outline: none;
+    }
+
+    .btn-submit-dark {
+      width: 100%;
+      padding: 10px 0;
+      background-color: #6D2344;
+      color: #ffffff;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .newsletter-img img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: #333333;
+      color: #ffffff;
+      padding: 50px 20px 30px;
+      text-align: center;
+    }
+
+    .footer-email {
+      color: #ffffff;
+      font-size: 1.8rem;
+      text-decoration: underline;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    .social-icons-row {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .social-icon-circle {
+      width: 36px;
+      height: 36px;
+      background-color: #666666;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-copyright {
+      color: #aaaaaa;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 800px) {
+      .navbar { padding: 20px; }
+      .hero-banner { padding-left: 20px; height: 360px; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .crisis-section, .mission-container, .dark-help-container, .newsletter-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      .story-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Emergency/Crisis Banner -->
-  <div class="crisis-banner">
-    <div class="container crisis-content">
-      <span>💔 <strong>Our Rescue is in Crisis:</strong> We urgently need funds to keep going. Every £1 helps save a life!</span>
-      <a href="https://www.paypal.com/paypalme/stocktoncatrescue" target="_blank" rel="noopener noreferrer" class="btn btn-urgent">Donate Today</a>
-    </div>
-  </div>
-
-  <!-- Header / Navigation -->
   <header class="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">
-        <span class="logo-icon">🐾</span> Happy Paws Cat Rescue
-      </a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="cats.html">Cats</a></li>
-          <li><a href="support.html">Support</a></li>
-          <li class="dropdown">
-            <a href="javascript:void(0)" class="dropdown-toggle">More ▾</a>
-            <ul class="dropdown-menu">
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li><a href="news.html">News</a></li>
-              <li><a href="shop.html">Shop</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </li>
-          <li><a href="https://www.paypal.com/paypalme/stocktoncatrescue" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Donate Now</a></li>
-        </ul>
-      </nav>
-    </div>
+    <a href="index.html" class="logo">
+      <span class="logo-icon">🐾</span> HAPPY PAWS
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cats.html">Cats</a></li>
+        <li><a href="support.html">Support</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle">More ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Hero / Home Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>Giving Every Cat a Second Chance at Life</h1>
-      <p>Dedicated to rescuing, rehabilitating, and rehoming homeless and vulnerable cats across the UK.</p>
-      <div class="hero-actions">
-        <a href="cats.html" class="btn btn-primary btn-large">Adopt a Cat</a>
-        <a href="https://www.paypal.com/paypalme/stocktoncatrescue" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-large">Support Our Mission</a>
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>HELPING CATS IN NEED</h1>
+      <a href="cats.html" class="btn-pill-red">Adopt Now</a>
+    </div>
+  </section>
+
+  <section class="crisis-section">
+    <div class="crisis-text">
+      <h2>💔 Our Rescue is in Crisis</h2>
+      <p>We're low on funds and urgently need your help to keep going.</p>
+      <p>Every pound makes a difference — even £1 can help us save a life.</p>
+      <p>Please consider donating today.</p>
+      <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="btn-outline-pill">DONATE NOW</a>
+    </div>
+    <div class="crisis-img-wrapper">
+      <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Rescued kitten needing medical care">
+    </div>
+  </section>
+
+  <section class="mission-strip">
+    <div class="mission-container">
+      <h2 class="mission-title">Our Mission</h2>
+      <p class="mission-desc">Happy Paws Cat Rescue is dedicated to rescuing, rehabilitating, and rehoming homeless cats. Our mission is to provide a safe haven for cats in need and to promote humane treatment through education and community involvement.</p>
+    </div>
+  </section>
+
+  <section class="impact-grid">
+    <div class="impact-card">
+      <div class="impact-card-icon">🐱</div>
+      <h3>Adopt a Cat</h3>
+      <p>Find your perfect feline companion and give a cat in need a loving home.</p>
+    </div>
+    <div class="impact-card">
+      <div class="impact-card-icon">💖</div>
+      <h3>Donate</h3>
+      <p>Your generous donations help us save lives and provide our cats with medical care.</p>
+    </div>
+    <div class="impact-card">
+      <div class="impact-card-icon">🤝</div>
+      <h3>Become a Volunteer</h3>
+      <p>Join our team and make a difference in the lives of cats in need.</p>
+    </div>
+  </section>
+
+  <section class="cats-preview-section">
+    <h2>Cats Available for Adoption</h2>
+    <div class="divider-line"></div>
+    
+    <div class="cats-grid-preview">
+      <a href="cats.html" class="cat-thumb-card">
+        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Freddie" class="cat-thumb-img">
+        <div class="cat-thumb-name">Freddie</div>
+      </a>
+      <a href="cats.html" class="cat-thumb-card">
+        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80" alt="Zeena" class="cat-thumb-img">
+        <div class="cat-thumb-name">Zeena</div>
+      </a>
+      <a href="cats.html" class="cat-thumb-card">
+        <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Castor" class="cat-thumb-img">
+        <div class="cat-thumb-name">Castor</div>
+      </a>
+      <a href="cats.html" class="cat-thumb-card">
+        <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=600&q=80" alt="Orion & Apollo" class="cat-thumb-img">
+        <div class="cat-thumb-name">Orion & Apollo</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="dark-help-banner">
+    <div class="dark-help-container">
+      <h2>Help Us Save<br>a Life Today</h2>
+      <div class="dark-help-right">
+        <p>Every donation brings us one step closer to rescuing and rehabilitating cats in need. Your support helps provide food, shelter, and medical care to the most vulnerable.</p>
+        <p><strong>Donate now and be a hero for a helpless soul.</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- Quick Impact / Action Cards -->
-  <section class="impact-cards">
-    <div class="container grid-3">
-      <div class="card action-card">
-        <div class="icon">🏠</div>
-        <h3>Adopt a Cat</h3>
-        <p>Find your perfect feline companion and give a rescue cat a loving forever home.</p>
-        <a href="cats.html" class="card-link">View Available Cats &rarr;</a>
+  <section class="story-grid">
+    <div class="story-pink-box">
+      <h2>Our<br>Story</h2>
+      <div class="line"></div>
+    </div>
+    <div class="story-text-box">
+      <h3>Get to Know Us</h3>
+      <p>At Happy Paws Cat Rescue, our story began with a simple mission — to give every cat a second chance at life. What started as a small effort has grown into a dedicated rescue working tirelessly to save, shelter, and rehome homeless and neglected cats.</p>
+      <p>Driven by compassion and community support, we ensure each feline receives the love, care, and medical attention they deserve. Whether it's a kitten in need of a warm place or an older cat looking for a forever home, we're here to help.</p>
+    </div>
+  </section>
+
+  <section class="testimonials-slider-section">
+    <button class="nav-arrow left" onclick="prevSlide()">&larr;</button>
+    <button class="nav-arrow right" onclick="nextSlide()">&rarr;</button>
+
+    <div class="slide-item active">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">Being with this rescue and adopting our new family member was amazing. They were able to help us find an amazing addition to the family and we couldn't be any more grateful. Thank you!</p>
+      <p class="slider-author-name">Kathleen Lily Arnold</p>
+    </div>
+
+    <div class="slide-item" style="display:none;">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">Where do I even start! What an AMAZING experience from start to finish we have had adopting our beautiful kittens. Such a professional and knowledgeable service.</p>
+      <p class="slider-author-name">Megan Sobotowska</p>
+    </div>
+
+    <div class="slide-item" style="display:none;">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">We adopted a beautiful cat called Penny from this cat rescue charity and could not fault it. We had great communication throughout the adoption process.</p>
+      <p class="slider-author-name">Susan Scott</p>
+    </div>
+
+    <div class="slide-item" style="display:none;">
+      <div class="slide-quote-mark">“</div>
+      <p class="slider-quote-text">The care that the cats have had with their fosterer before reaching us has been super. We cannot recommend this organisation highly enough!</p>
+      <p class="slider-author-name">Lucca Addy</p>
+    </div>
+
+    <div class="dots-row">
+      <span class="dot-item active" onclick="setSlide(0)"></span>
+      <span class="dot-item" onclick="setSlide(1)"></span>
+      <span class="dot-item" onclick="setSlide(2)"></span>
+      <span class="dot-item" onclick="setSlide(3)"></span>
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <div class="newsletter-card">
+      <div class="newsletter-form-wrapper">
+        <h3>Stay Connected With Happy Paws</h3>
+        <p>Join our newsletter to receive heartwarming rescue stories, adoption updates, and ways you can help cats in need — right in your inbox.</p>
+        <form onsubmit="return false;">
+          <input type="email" class="newsletter-input" placeholder="Email *" required>
+          <button type="submit" class="btn-submit-dark">Sign Up</button>
+        </form>
       </div>
-      <div class="card action-card">
-        <div class="icon">💛</div>
-        <h3>Make a Donation</h3>
-        <p>Your support directly funds life-saving medical care, food, and warm shelter.</p>
-        <a href="https://www.paypal.com/paypalme/stocktoncatrescue" target="_blank" rel="noopener noreferrer" class="card-link">Donate via PayPal &rarr;</a>
-      </div>
-      <div class="card action-card">
-        <div class="icon">🤝</div>
-        <h3>Get Involved</h3>
-        <p>Join our team of dedicated volunteers or become a temporary foster carer.</p>
-        <a href="support.html" class="card-link">How to Help &rarr;</a>
+      <div class="newsletter-img">
+        <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80" alt="Kitten sleeping">
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-info">
-        <h3>Happy Paws Cat Rescue</h3>
-        <p>Dedicated to rescuing, rehabilitating, and rehoming cats in need.</p>
-        <p>Email: <a href="mailto:info@happypawscatrescue.org">info@happypawscatrescue.org</a></p>
-      </div>
-      <div class="footer-links">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="cats.html">Adoptable Cats</a></li>
-          <li><a href="support.html">Support Us</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="shop.html">Charity Shop</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="https://www.paypal.com/paypalme/stocktoncatrescue" target="_blank" rel="noopener noreferrer">Donate via PayPal</a></li>
-        </ul>
-      </div>
+  <footer class="site-footer">
+    <a href="mailto:info@happypawscatrescue.org" class="footer-email">info@happypawscatrescue.org</a>
+    
+    <div class="social-icons-row">
+      <a href="https://www.facebook.com/stocktoncatrescue" target="_blank" class="social-icon-circle">f</a>
+      <a href="mailto:info@happypawscatrescue.org" class="social-icon-circle">✉</a>
     </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 Happy Paws Cat Rescue. All rights reserved. | Hosted on Cloudflare Pages</p>
-      </div>
+
+    <div class="footer-copyright">
+      &copy; 2026 Happy Paws Cat Rescue. All rights reserved. | Hosted on Cloudflare Pages
     </div>
   </footer>
+
+  <script>
+    let currentIdx = 0;
+    const slides = document.querySelectorAll('.slide-item');
+    const dots = document.querySelectorAll('.dot-item');
+
+    function renderSlide(index) {
+      slides.forEach(s => s.style.display = 'none');
+      dots.forEach(d => d.classList.remove('active'));
+
+      currentIdx = index;
+      if (currentIdx >= slides.length) currentIdx = 0;
+      if (currentIdx < 0) currentIdx = slides.length - 1;
+
+      slides[currentIdx].style.display = 'block';
+      dots[currentIdx].classList.add('active');
+    }
+
+    function nextSlide() { renderSlide(currentIdx + 1); }
+    function prevSlide() { renderSlide(currentIdx - 1); }
+    function setSlide(index) { renderSlide(index); }
+
+    // Auto Advance every 5 seconds
+    setInterval(nextSlide, 5000);
+  </script>
 
 </body>
 </html>
