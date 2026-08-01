@@ -224,7 +224,6 @@
       background-color: #005EA6;
     }
 
-    /* Official Payment Badges */
     .official-card-row {
       display: flex;
       align-items: center;
@@ -240,28 +239,8 @@
       box-shadow: 0 1px 2px rgba(0,0,0,0.15);
     }
 
-    /* POWR Watermark Styling */
-    .powr-watermark-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      margin-top: 4px;
-    }
-
-    .powr-logo-badge {
-      width: 34px;
-      height: 34px;
-      background-color: #3B82F6;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-    }
-
     .powr-watermark-text {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: #4A5568;
       font-weight: 400;
       letter-spacing: -0.3px;
@@ -331,7 +310,22 @@
       font-size: 1rem;
     }
 
-    /* Dots */
+    .nav-arrow {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #6D2344;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 10;
+    }
+
+    .nav-arrow.left { left: -40px; }
+    .nav-arrow.right { right: -40px; }
+
     .dots-container {
       display: flex;
       justify-content: center;
@@ -354,6 +348,70 @@
       background-color: #6D2344;
     }
 
+    /* Dark Two-Column Global Footer */
+    .dark-footer {
+      background-color: #0d1222;
+      color: #ffffff;
+      padding: 60px 80px 40px;
+    }
+
+    .footer-top-grid {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .footer-info-col h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .footer-info-col p {
+      color: #cccccc;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .footer-info-col a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-nav-col h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .footer-nav-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-nav-col a {
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-nav-col a:hover {
+      color: #E91E63;
+    }
+
+    .footer-bottom-bar {
+      border-top: 1px solid #1a2238;
+      padding-top: 25px;
+      text-align: center;
+      color: #888888;
+      font-size: 0.85rem;
+    }
+
     @media (max-width: 800px) {
       .navbar {
         padding: 20px;
@@ -366,6 +424,15 @@
         display: flex;
         flex-direction: column-reverse;
       }
+      .footer-top-grid {
+        flex-direction: column;
+        text-align: center;
+      }
+      .dark-footer {
+        padding: 40px 20px 30px;
+      }
+      .nav-arrow.left { left: 0; }
+      .nav-arrow.right { right: 0; }
     }
   </style>
 </head>
@@ -374,7 +441,7 @@
   <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
-      <span class="logo-icon">🐾</span> HAPPY PAWS
+      <span class="logo-icon">🐾</span> Happy Paws Cat Rescue
     </a>
     <nav>
       <ul class="nav-links">
@@ -387,7 +454,6 @@
           <ul class="dropdown-menu">
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="news.html">News</a></li>
-            <li><a href="shop.html">Shop</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </li>
@@ -448,33 +514,20 @@
         
         <!-- POWR Donation Widget -->
         <div class="donation-widget-wrapper">
-          <!-- Please Donate Button -->
           <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="btn-powr-donate">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
             Please Donate
           </a>
 
-          <!-- Official Payment Card Vector Badges -->
           <div class="official-card-row">
-            <!-- VISA -->
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#1A1F71"/><path d="M15.8 17.5l1.6-9.9h2.6l-1.6 9.9h-2.6zm9.3-9.7c-.5-.2-1.3-.4-2.3-.4-2.5 0-4.3 1.3-4.3 3.2 0 1.4 1.3 2.2 2.2 2.7.9.5 1.3.8 1.3 1.2 0 .6-.7.9-1.4.9-.9 0-1.5-.2-2.3-.5l-.3-.2-.3 2c.6.3 1.7.5 2.8.5 2.7 0 4.4-1.3 4.4-3.4 0-1.1-.7-2-2.1-2.7-.9-.4-1.4-.7-1.4-1.2 0-.4.5-.8 1.4-.8.8 0 1.4.2 1.9.4l.2.1.3-1.8zm6.5 0h-2c-.6 0-1.1.2-1.3.8l-3.7 8.9h2.7l.5-1.5h3.3l.3 1.5h2.4l-2.2-9.7zm-2.7 6.3l1.4-3.7.8 3.7h-2.2zm-17.7-6.3l-2.5 6.7-.3-1.3c-.5-1.7-2-3.5-3.8-4.4l2.4 9h2.7l4-9.9h-2.5z" fill="#FFF"/><path d="M9.8 7.8H5.6l-.1.3c3.3.8 5.5 2.8 6.4 5.2l-.9-4.7c-.2-.6-.6-.8-1.2-.8z" fill="#FAA61A"/></svg>
-            
-            <!-- MasterCard -->
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#0A0A23"/><circle cx="15" cy="13" r="8" fill="#EB001B"/><circle cx="25" cy="13" r="8" fill="#F79E1B" fill-opacity="0.92"/></svg>
-            
-            <!-- Amex -->
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#006FCF"/><path d="M6 10h3.5l1 2.2 1-2.2H15v6h-1.8v-3.7l-1.1 2.5h-1.2l-1.1-2.5V16H6v-6zm10 0h5v1.4h-3.2v.9h3v1.4h-3v1h3.3V16h-5.1v-6zm6 0h2l1.2 2 1.2-2h2v6h-1.8v-3.5l-1.4 2.3h-.1l-1.4-2.3V16h-1.7v-6z" fill="#FFF"/></svg>
-            
-            <!-- Discover -->
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/><path d="M0 17 Q 20 25 40 17 L 40 26 L 0 26 Z" fill="#F47B20"/><text x="4" y="14" fill="#231F20" font-family="sans-serif" font-weight="bold" font-size="6.5">DISCOVER</text></svg>
-            
-            <!-- PayPal -->
             <svg class="card-svg-badge" viewBox="0 0 40 26"><rect width="40" height="26" rx="4" fill="#003087"/><path d="M12.5 7.5h4.2c2.1 0 3.3.9 3 2.6-.4 2.2-2.1 3.4-4.2 3.4h-1.5l-1 5H10l2.5-11zm2.7 4h1.1c1.1 0 1.9-.5 2.1-1.4.2-1-.4-1.4-1.4-1.4h-1.1l-.7 2.8z" fill="#009CDE"/><path d="M15.5 9.5h4.2c2.1 0 3.3.9 3 2.6-.4 2.2-2.1 3.4-4.2 3.4h-1.5l-1 5H13l2.5-11zm2.7 4h1.1c1.1 0 1.9-.5 2.1-1.4.2-1-.4-1.4-1.4-1.4h-1.1l-.7 2.8z" fill="#FFF" fill-opacity="0.9"/></svg>
           </div>
 
-          <!-- Made with POWR Watermark -->
           <a href="https://www.powr.io/paypal-button-website-app?utm_src=watermark-paypal-button" target="_blank" rel="noopener noreferrer" class="powr-watermark-text" style="text-decoration: none;">Made with <strong>POWR</strong></a>
-
         </div>
 
       </div>
@@ -502,9 +555,11 @@
 
   <div class="dotted-divider"></div>
 
-  <!-- Testimonials Slideshow -->
+  <!-- Testimonials Manual Slideshow -->
   <div class="slideshow-container">
-    
+    <button class="nav-arrow left" onclick="prevSlide()">&larr;</button>
+    <button class="nav-arrow right" onclick="nextSlide()">&rarr;</button>
+
     <div class="slide active">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Being with this rescue and adopting our new family member was amazing. They were able to help us find an amazing addition to the family and we couldn't be any more grateful. Thank you!</p>
@@ -529,7 +584,6 @@
       <p class="slide-author">Lucca Addy</p>
     </div>
 
-    <!-- Dots -->
     <div class="dots-container">
       <span class="dot active" onclick="currentSlide(0)"></span>
       <span class="dot" onclick="currentSlide(1)"></span>
@@ -538,7 +592,34 @@
     </div>
   </div>
 
-  <!-- JavaScript for Slideshow -->
+  <!-- Dark Two-Column Global Footer -->
+  <footer class="dark-footer">
+    <div class="footer-top-grid">
+      <div class="footer-info-col">
+        <h3>Happy Paws Cat Rescue</h3>
+        <p>Dedicated to rescuing, rehabilitating, and rehoming cats in need.</p>
+        <p>Email: <a href="mailto:info@happypawscatrescue.org">info@happypawscatrescue.org</a></p>
+      </div>
+      <div class="footer-nav-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="cats.html">Adoptable Cats</a></li>
+          <li><a href="support.html">Support Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer">Donate via PayPal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      &copy; 2026 Happy Paws Cat Rescue. All rights reserved. | Hosted on Cloudflare Pages
+    </div>
+  </footer>
+
+  <!-- Manual-Only Slideshow Script -->
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
@@ -556,14 +637,9 @@
       dots[slideIndex].classList.add('active');
     }
 
-    function currentSlide(index) {
-      showSlide(index);
-    }
-
-    // Auto-advance slides every 5 seconds
-    setInterval(() => {
-      showSlide(slideIndex + 1);
-    }, 5000);
+    function nextSlide() { showSlide(slideIndex + 1); }
+    function prevSlide() { showSlide(slideIndex - 1); }
+    function currentSlide(index) { showSlide(index); }
   </script>
 
 </body>
