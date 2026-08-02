@@ -73,7 +73,7 @@
       top: 100%;
       left: 0;
       background-color: #ffffff;
-      min-width: 160px;
+      min-width: 170px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
       padding: 8px 0;
@@ -104,7 +104,6 @@
       display: block;
     }
 
-    /* Page Header */
     .page-header {
       text-align: center;
       max-width: 800px;
@@ -125,7 +124,6 @@
       color: #555555;
     }
 
-    /* Content Blocks */
     .support-container {
       max-width: 1100px;
       margin: 0 auto;
@@ -177,7 +175,6 @@
       margin-bottom: 6px;
     }
 
-    /* Standard Buttons */
     .btn-outline-pill {
       display: inline-block;
       padding: 10px 28px;
@@ -196,7 +193,6 @@
       color: #ffffff;
     }
 
-    /* POWR Donation Widget Styling */
     .donation-widget-wrapper {
       display: flex;
       flex-direction: column;
@@ -252,7 +248,6 @@
       font-weight: 700;
     }
 
-    /* Testimonials Section */
     .testimonials-cta-section {
       text-align: center;
       max-width: 800px;
@@ -273,7 +268,6 @@
       opacity: 0.5;
     }
 
-    /* Manual Carousel Slideshow */
     .slideshow-container {
       position: relative;
       max-width: 800px;
@@ -421,24 +415,11 @@
     }
 
     @media (max-width: 800px) {
-      .navbar {
-        padding: 20px;
-      }
-      .support-block {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .support-block.reverse {
-        display: flex;
-        flex-direction: column-reverse;
-      }
-      .footer-top-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-      .dark-footer {
-        padding: 40px 20px 30px;
-      }
+      .navbar { padding: 20px; }
+      .support-block { grid-template-columns: 1fr; gap: 40px; }
+      .support-block.reverse { display: flex; flex-direction: column-reverse; }
+      .footer-top-grid { flex-direction: column; text-align: center; }
+      .dark-footer { padding: 40px 20px 30px; }
       .nav-arrow.left { left: 0; }
       .nav-arrow.right { right: 0; }
     }
@@ -446,7 +427,6 @@
 </head>
 <body>
 
-  <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
       <span class="logo-icon">🐾</span> Happy Paws Cat Rescue
@@ -454,30 +434,27 @@
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="cats.html">Cats</a></li>
-        <li><a href="support.html" class="active">Support</a></li>
         <li class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle">More ▾</a>
+          <a href="about.html" class="dropdown-toggle">About ▾</a>
           <ul class="dropdown-menu">
+            <li><a href="about.html">About Us</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </li>
+        <li><a href="cats.html">Cats</a></li>
+        <li><a href="support.html" class="active">Support</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Title Header -->
   <section class="page-header">
     <h1>Ways you can help and support us.</h1>
     <p>Adoption isn't the only way you can support our rescue. If you would like to help us but are not in a position to adopt, why not consider one of these alternatives.</p>
   </section>
 
   <main class="support-container">
-
-    <!-- Fostering Section -->
     <div class="support-block">
       <div class="circle-img-wrapper">
         <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Fostering kitten">
@@ -491,7 +468,6 @@
       </div>
     </div>
 
-    <!-- Fundraising Section -->
     <div class="support-block reverse">
       <div class="support-text">
         <h2>Fundraising</h2>
@@ -510,7 +486,6 @@
       </div>
     </div>
 
-    <!-- Donations Section -->
     <div class="support-block">
       <div class="circle-img-wrapper">
         <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=600&q=80" alt="White cat">
@@ -520,7 +495,6 @@
         <p>It costs, on average, £200 to rehome a cat. Obviously if they need medical attention it can be considerably more. Donations help us to keep helping the cats that need us.</p>
         <p>We would be extremely grateful if you could consider making a one off donation or a standing order to help us on a monthly basis.</p>
         
-        <!-- POWR Donation Widget -->
         <div class="donation-widget-wrapper">
           <a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer" class="btn-powr-donate">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
@@ -537,11 +511,9 @@
 
           <a href="https://www.powr.io/paypal-button-website-app?utm_src=watermark-paypal-button" target="_blank" rel="noopener noreferrer" class="powr-watermark-text" style="text-decoration: none;">Made with <strong>POWR</strong></a>
         </div>
-
       </div>
     </div>
 
-    <!-- Wish List Section -->
     <div class="support-block reverse">
       <div class="support-text">
         <h2>Happy Paws Wish List</h2>
@@ -552,10 +524,8 @@
         <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80" alt="Kittens cuddled">
       </div>
     </div>
-
   </main>
 
-  <!-- Testimonials Button Header -->
   <section class="testimonials-cta-section">
     <h3>Read what our adopters and supporters have said about our rescue.</h3>
     <a href="testimonials.html" class="btn-outline-pill">Testimonials</a>
@@ -563,96 +533,82 @@
 
   <div class="dotted-divider"></div>
 
-  <!-- Testimonials Manual Slideshow (All 12 Real Testimonials, No Auto-Scroll) -->
   <div class="slideshow-container">
     <button class="nav-arrow left" onclick="prevSlide()">&larr;</button>
     <button class="nav-arrow right" onclick="nextSlide()">&rarr;</button>
 
-    <!-- 1. Kathleen Lily Arnold -->
     <div class="slide active">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Being with this rescue and adopting our new family member was amazing. They were able to help us find an amazing addition to the family and we couldn't be any more grateful. Thank you!</p>
       <p class="slide-author">Kathleen Lily Arnold</p>
     </div>
 
-    <!-- 2. Megan Sobotowska -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Where do I even start! What an AMAZING experience from start to finish we have had adopting our beautiful kittens. Such a professional and knowledgeable service. Katrina you are a blessing to the world!</p>
       <p class="slide-author">Megan Sobotowska</p>
     </div>
 
-    <!-- 3. Susan Scott -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">We adopted a beautiful cat called Penny from this cat rescue charity and could not fault it. We had great communication throughout the adoption process. Penny was dropped off with toys, a cat tower, food and litter tray!</p>
       <p class="slide-author">Susan Scott</p>
     </div>
 
-    <!-- 4. Tracey McCarthy -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Katrina offered space to Chester, a beautiful tabby boy. Vicki kindly drove to Stafford Services to collect him. I am so grateful — this boy deserves a forever home and Happy Paws have given him that chance.</p>
       <p class="slide-author">Tracey McCarthy</p>
     </div>
 
-    <!-- 5. Lucca Addy -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">We are the delighted new owners of Kitty and Rosie. The care that the cats have had with their fosterer before reaching us has been super. We cannot recommend this organisation highly enough!</p>
       <p class="slide-author">Lucca Addy</p>
     </div>
 
-    <!-- 6. Maggie Gilchrist -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">I have been a supporter of Happy Paws for some time now. Katrina works tirelessly to ensure the best for every cat/kitten that comes into her care. I would 100% recommend Happy Paws for adoption!</p>
       <p class="slide-author">Maggie Gilchrist</p>
     </div>
 
-    <!-- 7. Charlotte Harte -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Katrina has been the BIGGEST help in saving my life and my precious kitties. The time, effort, money, miles and energy that Kat puts in to help is unmatched. Thank you so much Kat!</p>
       <p class="slide-author">Charlotte Harte</p>
     </div>
 
-    <!-- 8. Petra Kucerova -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Amazing experience. Katrina Rose was amazing, very pleasant and responsive. Even set up a chat so I could get to know Milo. The love and dedication of this rescue is second to none!</p>
       <p class="slide-author">Petra Kucerova</p>
     </div>
 
-    <!-- 9. Purrs Cat Rescue -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">An absolutely wonderful team! It's lovely to see the work they do for the kitties in their area, finding them their forever homes, providing foster care & offering help and advice.</p>
       <p class="slide-author">Purrs Cat Rescue</p>
     </div>
 
-    <!-- 10. Jessica Barton -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Five star! I have nothing except good words to say about this lovely rescue whose kind intentions and love for cats show through their work. Thank you for all that you do!</p>
       <p class="slide-author">Jessica Barton</p>
     </div>
 
-    <!-- 11. Janice Peart -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">I help run Pet Angels Wearside and have worked alongside Katrina a lot. She took in an elderly cat that needed emergency vet treatment and then found the perfect home for her!</p>
       <p class="slide-author">Janice Peart</p>
     </div>
 
-    <!-- 12. Nichola Davey & Corinna Laurie -->
     <div class="slide">
       <div class="quote-icon">“</div>
       <p class="slide-quote">Communication was amazing from the start and Katrina and Vicki were really helpful. What a wonderful charity doing amazing work. The cats are so cared for!</p>
       <p class="slide-author">Nichola Davey & Corinna Laurie</p>
     </div>
 
-    <!-- Dot Indicators for all 12 slides -->
     <div class="dots-container">
       <span class="dot active" onclick="currentSlide(0)"></span>
       <span class="dot" onclick="currentSlide(1)"></span>
@@ -669,7 +625,6 @@
     </div>
   </div>
 
-  <!-- Dark Two-Column Global Footer -->
   <footer class="dark-footer">
     <div class="footer-top-grid">
       <div class="footer-info-col">
@@ -696,7 +651,6 @@
     </div>
   </footer>
 
-  <!-- Manual-Only Slideshow Script (No Auto-Scroll) -->
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
