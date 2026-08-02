@@ -1,4 +1,6 @@
-/* Base Global Reset */
+/* ===================================================
+   GLOBAL BASE STYLES
+   =================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,8 +12,132 @@ body {
   background-color: #F8F3EC;
   color: #4A4A4A;
   line-height: 1.6;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling on mobile */
 }
 
-a {
-  color: inherit;
+img, iframe {
+  max-width: 100%; /* Ensures images & embeds never overflow the screen */
+}
+
+/* ===================================================
+   MOBILE RESPONSIVE OVERRIDES (Screens smaller than 768px)
+   =================================================== */
+@media (max-width: 768px) {
+
+  /* 1. Header & Navigation Adjustments */
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px !important;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.1rem !important;
+  }
+
+  .nav-links {
+    gap: 15px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem !important;
+  }
+
+  /* 2. Responsive Typography */
+  h1, .page-title, .cats-header h1, .story-pink-box h2 {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2, .support-text h2, .news-block h2, .facebook-section h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem !important;
+  }
+
+  /* 3. Hero & Banner Adjustments */
+  .hero-banner {
+    padding-left: 20px !important;
+    height: 300px !important;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .contact-hero {
+    height: 280px !important;
+    border-radius: 0 !important;
+    padding: 20px 15px !important;
+  }
+
+  .contact-hero-text h1, .contact-hero-text p {
+    font-size: 1.2rem !important;
+  }
+
+  /* 4. Fix Overlapping & Negative Margins */
+  .about-card {
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    padding: 25px 20px !important;
+  }
+
+  .form-wrapper {
+    margin-top: -80px !important;
+    padding: 0 15px !important;
+  }
+
+  .contact-card {
+    padding: 25px 20px !important;
+  }
+
+  /* 5. Content Layout Grids to Single Column */
+  .support-block, 
+  .about-container, 
+  .story-grid, 
+  .newsletter-card, 
+  .modal-body {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .story-pink-box, .story-text-box {
+    padding: 30px 20px !important;
+  }
+
+  .circle-img-wrapper {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  /* 6. Carousel Arrows Positioning */
+  .nav-arrow.left {
+    left: 0px !important;
+  }
+
+  .nav-arrow.right {
+    right: 0px !important;
+  }
+
+  /* 7. Facebook iFrame Mobile Fix */
+  .facebook-widget-card {
+    padding: 10px !important;
+    width: 100% !important;
+  }
+
+  .facebook-iframe-wrapper iframe {
+    width: 100% !important;
+  }
+
+  /* 8. Modal Dialog Mobile Adjustments */
+  .modal-card {
+    padding: 20px 15px !important;
+  }
+
+  .behavior-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }
