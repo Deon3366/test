@@ -69,7 +69,7 @@
       top: 100%;
       left: 0;
       background-color: #ffffff;
-      min-width: 160px;
+      min-width: 170px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
       padding: 8px 0;
@@ -100,14 +100,12 @@
       display: block;
     }
 
-    /* Page Container */
     .news-container {
       max-width: 980px;
       margin: 0 auto 80px;
       padding: 0 20px;
     }
 
-    /* Hero Image */
     .hero-image-wrapper {
       width: 100%;
       border-radius: 12px;
@@ -123,7 +121,6 @@
       display: block;
     }
 
-    /* News Sections */
     .page-title {
       color: #E91E63;
       font-size: 3rem;
@@ -149,7 +146,6 @@
       line-height: 1.6;
     }
 
-    /* Facebook Embed Container */
     .facebook-section {
       text-align: center;
       margin-top: 50px;
@@ -265,31 +261,17 @@
     }
 
     @media (max-width: 768px) {
-      .navbar {
-        padding: 20px;
-      }
-      .hero-image-wrapper img {
-        height: 300px;
-      }
-      .page-title {
-        font-size: 2.2rem;
-      }
-      .news-block h2 {
-        font-size: 1.8rem;
-      }
-      .footer-top-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-      .dark-footer {
-        padding: 40px 20px 30px;
-      }
+      .navbar { padding: 20px; }
+      .hero-image-wrapper img { height: 300px; }
+      .page-title { font-size: 2.2rem; }
+      .news-block h2 { font-size: 1.8rem; }
+      .footer-top-grid { flex-direction: column; text-align: center; }
+      .dark-footer { padding: 40px 20px 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
       <span class="logo-icon">🐾</span> Happy Paws Cat Rescue
@@ -297,100 +279,17 @@
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="cats.html">Cats</a></li>
-        <li><a href="support.html">Support</a></li>
         <li class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle" style="color: #E91E63;">More ▾</a>
+          <a href="about.html" class="dropdown-toggle active">About ▾</a>
           <ul class="dropdown-menu">
+            <li><a href="about.html">About Us</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
-            <li><a href="news.html" style="color: #E91E63; font-weight: bold;">News</a></li>
+            <li><a href="news.html" style="font-weight: bold; color: #E91E63;">News</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </li>
+        <li><a href="cats.html">Cats</a></li>
+        <li><a href="support.html">Support</a></li>
       </ul>
     </nav>
   </header>
-
-  <main class="news-container">
-    
-    <!-- Hero Cat Header Image -->
-    <div class="hero-image-wrapper">
-      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1200&q=80" alt="News Cat Header">
-    </div>
-
-    <h1 class="page-title">News</h1>
-
-    <!-- Breaking News Block -->
-    <section class="news-block">
-      <h2>Breaking News</h2>
-      <p>We are extremely excited to announce that our rescue will be featured on BBC Banbury on 5th February.</p>
-    </section>
-
-    <!-- Other News Block -->
-    <section class="news-block">
-      <h2>Other News</h2>
-      <p>Keep an eye on this section of our site as we will be frequently updating it with our news and information.</p>
-    </section>
-
-    <!-- Events Block -->
-    <section class="news-block">
-      <h2>Events</h2>
-      <p>We are always holding events to raise awareness of our rescue. These are some of the ones we will be involved with over the next few months.</p>
-    </section>
-
-    <!-- Facebook Live Feed Section -->
-    <section class="facebook-section">
-      <h2>Don't forget to also follow us on Facebook.</h2>
-      
-      <div class="facebook-widget-card">
-        <div class="facebook-iframe-wrapper">
-          <iframe 
-            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fstocktoncatrescue&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-            width="500" 
-            height="600" 
-            style="border:none;overflow:hidden" 
-            scrolling="no" 
-            frameborder="0" 
-            allowfullscreen="true" 
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-          </iframe>
-        </div>
-
-        <a href="https://www.facebook.com/stocktoncatrescue" target="_blank" rel="noopener noreferrer" class="btn-fb-link">
-          Visit Us on Facebook
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Dark Two-Column Global Footer -->
-  <footer class="dark-footer">
-    <div class="footer-top-grid">
-      <div class="footer-info-col">
-        <h3>Happy Paws Cat Rescue</h3>
-        <p>Dedicated to rescuing, rehabilitating, and rehoming cats in need.</p>
-        <p>Email: <a href="mailto:info@happypawscatrescue.org">info@happypawscatrescue.org</a></p>
-      </div>
-      <div class="footer-nav-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="cats.html">Adoptable Cats</a></li>
-          <li><a href="support.html">Support Us</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="news.html">News</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="https://www.powr.io/checkout_screen?unique_label=53e84b1e_1738673195" target="_blank" rel="noopener noreferrer">Donate via PayPal</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom-bar">
-      &copy; 2026 Happy Paws Cat Rescue. All rights reserved. | Hosted on Cloudflare Pages
-    </div>
-  </footer>
-
-</body>
-</html>
