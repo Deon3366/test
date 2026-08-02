@@ -1,5 +1,5 @@
 /* ===================================================
-   GLOBAL BASE RESETS
+   1. GLOBAL BASE STYLES & RESETS
    =================================================== */
 * {
   box-sizing: border-box;
@@ -12,19 +12,69 @@ body {
   background-color: #F8F3EC;
   color: #4A4A4A;
   line-height: 1.6;
-  overflow-x: hidden; /* Prevents horizontal screen shift */
+  overflow-x: hidden; /* Prevents horizontal screen shift on mobile */
 }
 
-img, iframe {
+img, iframe, svg {
   max-width: 100%;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* ===================================================
-   UNIVERSAL MOBILE RESPONSIVE OVERRIDES (max-width: 768px)
+   2. DESKTOP NAVIGATION & DROPDOWN MENU
+   =================================================== */
+.nav-links li.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 170px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: #333333;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f5f5f5;
+  color: #E91E63;
+}
+
+/* Display dropdown menu on hover */
+.nav-links li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ===================================================
+   3. UNIVERSAL MOBILE RESPONSIVE OVERRIDES (max-width: 768px)
    =================================================== */
 @media (max-width: 768px) {
 
-  /* 1. Navbar Container Fix */
+  /* Navbar Layout */
   .navbar {
     flex-direction: column !important;
     align-items: center !important;
@@ -34,10 +84,10 @@ img, iframe {
     width: 100% !important;
   }
 
-  /* 2. Brand / Logo Fix - Prevents 4-line vertical text squishing */
+  /* Logo Branding */
   .logo {
     font-size: 1.1rem !important;
-    white-space: nowrap !important; /* Forces logo on a clean single line */
+    white-space: nowrap !important; /* Prevents logo text from breaking into multiple vertical lines */
     justify-content: center !important;
     width: 100% !important;
   }
@@ -46,7 +96,7 @@ img, iframe {
     font-size: 1.3rem !important;
   }
 
-  /* 3. Navigation Bar Layout Fix */
+  /* Navigation Links */
   nav {
     width: 100% !important;
   }
@@ -65,19 +115,33 @@ img, iframe {
     padding: 4px 6px !important;
   }
 
-  /* 4. Dropdown Menu Overlay Fix */
+  /* Centered Dropdown Menu on Mobile */
   .dropdown-menu {
     position: absolute !important;
     top: 100% !important;
-    right: 50% !important;
-    transform: translateX(50%) !important; /* Centers dropdown cleanly */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     background-color: #ffffff !important;
     border: 1px solid #6D2344 !important;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
     z-index: 9999 !important;
   }
 
-  /* 5. Hero Banner Rescaling */
+  /* Headings Rescaling */
+  h1, .page-title, .cats-header h1, .story-pink-box h2 {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2, .support-text h2, .news-block h2, .facebook-section h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem !important;
+  }
+
+  /* Banners & Hero Images */
   .hero-banner {
     height: 280px !important;
     padding-left: 15px !important;
@@ -86,21 +150,17 @@ img, iframe {
     text-align: center !important;
   }
 
-  .hero-content {
-    max-width: 100% !important;
+  .contact-hero {
+    height: 280px !important;
+    border-radius: 0 !important;
+    padding: 20px 15px !important;
   }
 
-  .hero-content h1 {
-    font-size: 1.8rem !important;
-    letter-spacing: 0px !important;
+  .contact-hero-text h1, .contact-hero-text p {
+    font-size: 1.2rem !important;
   }
 
-  .btn-pill-red {
-    padding: 10px 28px !important;
-    font-size: 0.95rem !important;
-  }
-
-  /* 6. Section Container Stack (Desktop 2-Col -> Mobile 1-Col) */
+  /* Single Column Layouts for Mobile */
   .crisis-section,
   .mission-container,
   .dark-help-container,
@@ -118,7 +178,7 @@ img, iframe {
     padding-right: 15px !important;
   }
 
-  /* 7. Image Container Mobile Scaling */
+  /* Image Containers */
   .crisis-img-wrapper img,
   .newsletter-img img {
     width: 100% !important;
@@ -130,18 +190,12 @@ img, iframe {
     height: 200px !important;
   }
 
-  .dark-help-container h2,
-  .mission-title,
-  .story-pink-box h2 {
-    font-size: 1.8rem !important;
-  }
-
   .story-pink-box,
   .story-text-box {
     padding: 35px 20px !important;
   }
 
-  /* 8. Overlapping Cards Edge Bleed Fix */
+  /* Overlapping Cards Fix */
   .about-card {
     margin-right: 0 !important;
     margin-top: 0 !important;
@@ -153,21 +207,44 @@ img, iframe {
     padding: 0 15px !important;
   }
 
-  /* 9. Testimonials Carousel Navigation Controls */
+  .contact-card {
+    padding: 25px 20px !important;
+  }
+
+  /* Testimonials Slider Arrows */
   .testimonials-slider-section,
   .slideshow-container {
     padding: 40px 15px !important;
   }
 
   .nav-arrow.left {
-    left: -5px !important;
+    left: 0px !important;
   }
 
   .nav-arrow.right {
-    right: -5px !important;
+    right: 0px !important;
   }
 
-  /* 10. Footer Layout */
+  /* Embedded Facebook Widget */
+  .facebook-widget-card {
+    padding: 10px !important;
+    width: 100% !important;
+  }
+
+  .facebook-iframe-wrapper iframe {
+    width: 100% !important;
+  }
+
+  /* Cat Modal Details */
+  .modal-card {
+    padding: 20px 15px !important;
+  }
+
+  .behavior-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Footer Adjustment */
   .dark-footer {
     padding: 40px 20px 30px !important;
   }
