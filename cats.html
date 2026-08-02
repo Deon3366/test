@@ -73,7 +73,7 @@
       top: 100%;
       left: 0;
       background-color: #ffffff;
-      min-width: 160px;
+      min-width: 170px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
       padding: 8px 0;
@@ -431,31 +431,17 @@
     }
 
     @media (max-width: 768px) {
-      .navbar {
-        padding: 20px;
-      }
-      .modal-body {
-        grid-template-columns: 1fr;
-      }
-      .modal-actions {
-        flex-direction: column;
-      }
-      .behavior-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      .footer-top-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-      .dark-footer {
-        padding: 40px 20px 30px;
-      }
+      .navbar { padding: 20px; }
+      .modal-body { grid-template-columns: 1fr; }
+      .modal-actions { flex-direction: column; }
+      .behavior-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top-grid { flex-direction: column; text-align: center; }
+      .dark-footer { padding: 40px 20px 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
       <span class="logo-icon">🐾</span> Happy Paws Cat Rescue
@@ -463,22 +449,21 @@
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="cats.html" class="active">Cats</a></li>
-        <li><a href="support.html">Support</a></li>
         <li class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle">More ▾</a>
+          <a href="about.html" class="dropdown-toggle">About ▾</a>
           <ul class="dropdown-menu">
+            <li><a href="about.html">About Us</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </li>
+        <li><a href="cats.html" class="active">Cats</a></li>
+        <li><a href="support.html">Support</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Title Header -->
   <section class="cats-header">
     <h1>These are some of our beautiful cats and kittens that are looking for their forever homes</h1>
     <p>If you see a cat you would like to know more about, click on their photo.</p>
@@ -486,8 +471,6 @@
   </section>
 
   <main class="cats-app-card">
-    
-    <!-- Filter Bar -->
     <div class="filter-bar">
       <label for="age-filter">Age</label>
       <select id="age-filter" class="filter-select" onchange="filterCats()">
@@ -499,10 +482,7 @@
       </select>
     </div>
 
-    <!-- Cats Grid -->
     <div class="cats-grid">
-
-      <!-- Magic -->
       <div class="cat-card-item" data-age="Adult" onclick="openCatModal('Magic', 'Female', 'Adult', 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80')">
         <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80" alt="Magic" class="cat-card-img">
         <div class="cat-card-info">
@@ -511,7 +491,6 @@
         </div>
       </div>
 
-      <!-- Ziggy -->
       <div class="cat-card-item" data-age="Baby" onclick="openCatModal('Ziggy', 'Male', 'Baby', 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80')">
         <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80" alt="Ziggy" class="cat-card-img">
         <div class="cat-card-info">
@@ -520,7 +499,6 @@
         </div>
       </div>
 
-      <!-- Louie -->
       <div class="cat-card-item" data-age="Baby" onclick="openCatModal('Louie', 'Male', 'Baby', 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80')">
         <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Louie" class="cat-card-img">
         <div class="cat-card-info">
@@ -529,7 +507,6 @@
         </div>
       </div>
 
-      <!-- Pumpkin -->
       <div class="cat-card-item" data-age="Adult" onclick="openCatModal('Pumpkin', 'Female', 'Adult', 'https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=600&q=80')">
         <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=600&q=80" alt="Pumpkin" class="cat-card-img">
         <div class="cat-card-info">
@@ -537,12 +514,9 @@
           <p>Female • Adult</p>
         </div>
       </div>
-
     </div>
-
   </main>
 
-  <!-- Detailed Cat Modal Pop-up -->
   <div id="cat-modal" class="modal-overlay">
     <div class="modal-card">
       <button class="close-btn" onclick="closeCatModal()">&larr; Back to list</button>
@@ -575,26 +549,11 @@
           <div class="behavior-card">
             <h4>Additional Behavior Details</h4>
             <div class="behavior-grid">
-              <div class="behavior-item">
-                <strong>Gets Along with Dogs</strong>
-                <span>Unsure</span>
-              </div>
-              <div class="behavior-item">
-                <strong>Gets Along with Cats</strong>
-                <span>Unsure</span>
-              </div>
-              <div class="behavior-item">
-                <strong>Gets Along with Kids</strong>
-                <span>Unsure</span>
-              </div>
-              <div class="behavior-item">
-                <strong>Housetrained</strong>
-                <span>Unsure</span>
-              </div>
-              <div class="behavior-item">
-                <strong>Needs Experienced Adopter?</strong>
-                <span>Unsure</span>
-              </div>
+              <div class="behavior-item"><strong>Gets Along with Dogs</strong><span>Unsure</span></div>
+              <div class="behavior-item"><strong>Gets Along with Cats</strong><span>Unsure</span></div>
+              <div class="behavior-item"><strong>Gets Along with Kids</strong><span>Unsure</span></div>
+              <div class="behavior-item"><strong>Housetrained</strong><span>Unsure</span></div>
+              <div class="behavior-item"><strong>Needs Experienced Adopter?</strong><span>Unsure</span></div>
             </div>
           </div>
         </div>
@@ -603,7 +562,6 @@
     </div>
   </div>
 
-  <!-- Dark Two-Column Global Footer -->
   <footer class="dark-footer">
     <div class="footer-top-grid">
       <div class="footer-info-col">
@@ -630,7 +588,6 @@
     </div>
   </footer>
 
-  <!-- Filter & Modal Scripts -->
   <script>
     function filterCats() {
       const selectedAge = document.getElementById('age-filter').value;
