@@ -73,7 +73,7 @@
       top: 100%;
       left: 0;
       background-color: #ffffff;
-      min-width: 160px;
+      min-width: 170px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-radius: 8px;
       padding: 8px 0;
@@ -263,35 +263,18 @@
       font-size: 0.85rem;
     }
 
-    /* Responsive scaling */
     @media (max-width: 900px) {
-      .navbar {
-        padding: 20px;
-      }
-      .about-container {
-        grid-template-columns: 1fr;
-      }
-      .about-card {
-        margin-right: 0;
-        margin-top: 0;
-        margin-bottom: 30px;
-      }
-      .image-wrapper img {
-        height: 350px;
-      }
-      .footer-top-grid {
-        flex-direction: column;
-        text-align: center;
-      }
-      .dark-footer {
-        padding: 40px 20px 30px;
-      }
+      .navbar { padding: 20px; }
+      .about-container { grid-template-columns: 1fr; }
+      .about-card { margin-right: 0; margin-top: 0; margin-bottom: 30px; }
+      .image-wrapper img { height: 350px; }
+      .footer-top-grid { flex-direction: column; text-align: center; }
+      .dark-footer { padding: 40px 20px 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header / Navigation -->
   <header class="navbar">
     <a href="index.html" class="logo">
       <span class="logo-icon">🐾</span> Happy Paws Cat Rescue
@@ -299,24 +282,22 @@
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="cats.html">Cats</a></li>
-        <li><a href="support.html">Support</a></li>
         <li class="dropdown">
-          <a href="javascript:void(0)" class="dropdown-toggle">More ▾</a>
+          <a href="about.html" class="dropdown-toggle active">About ▾</a>
           <ul class="dropdown-menu">
+            <li><a href="about.html" style="font-weight: bold; color: #E91E63;">About Us</a></li>
             <li><a href="testimonials.html">Testimonials</a></li>
             <li><a href="news.html">News</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </li>
+        <li><a href="cats.html">Cats</a></li>
+        <li><a href="support.html">Support</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- About Section -->
   <main class="about-container">
-    <!-- Left Overlapping Card -->
     <div class="about-card">
       <h1>ABOUT US</h1>
       <p>Happy Paws Cat Rescue was founded by myself, Katrina. I've had a passion for helping cats all my life—ever since I was a little girl, I would always try to help cats in need. I always dreamed of opening my own rescue when I got older, and now that dream is a reality.</p>
@@ -324,7 +305,6 @@
       <p>Our team is made up of dedicated volunteers who work tirelessly to ensure that every cat in our care receives the love and support they deserve. From rescuing strays to rehabilitating and rehoming them, we're committed to making a difference in the lives of cats in need.</p>
     </div>
 
-    <!-- Right Image & CTA -->
     <div class="about-right-col">
       <div class="image-wrapper">
         <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?auto=format&fit=crop&w=800&q=80" alt="Rescue cat receiving care">
@@ -336,7 +316,6 @@
     </div>
   </main>
 
-  <!-- Dark Two-Column Global Footer -->
   <footer class="dark-footer">
     <div class="footer-top-grid">
       <div class="footer-info-col">
